@@ -1,0 +1,257 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+:root {
+    --primary-color: #ccd8cc;
+    --secondary-color: #152e1d;
+    --text-color: #ecf0f1;
+    --text-secondary-color: #000f1f;
+    --background-color: #cdd8d2;
+}
+
+body{
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--text-color);
+    transition: background-color 0.5s ease;
+     background-color: rgb(216, 219, 223);
+}
+
+
+.pesquisa{
+    
+    display: flex;
+    justify-content: end;
+    padding: 15px;
+    width: 100vw;
+    height: 60px;
+    
+    
+}
+.pesquisa input{
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 10px 15px ;
+    color: rgb(197, 197, 190);
+    border: none;
+   
+}
+.menu-lateral{
+    position: fixed;
+    left: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: var(--background-color);
+    box-shadow:0 0 20px #001;
+    z-index: 5;
+    transition: all 0.5s cubic-bezier(.87,.03,.36,.98) ;
+    
+}
+.menu-lateral.ativo{
+    left: 0;
+
+}
+
+
+.menu-lateral ul{
+    list-style: none;
+    padding: 0;
+    margin-top:60px;
+
+}
+.menu-lateral ul li{
+   padding: 15px 30px;
+}
+.menu-lateral ul li a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.menu-lateral ul li a i{
+    font-size: 24px;
+
+}
+.menu-lateral.ativo ul li:hover{
+    background-color: var(--secondary-color);
+}
+.menu-lateral.ativo ul li a i:hover{
+    transform: translateX(5px) rotate(5deg);
+}
+.botao-menu{
+    background-color:rgb(216, 219, 223);
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 6;
+    border-radius: 5px;
+    border: none;
+    font-size: 24px;
+    padding: 5px 8px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.5s cubic-bezier(.61,.02,.04,.9);
+
+}
+.botao-menu:hover{
+    background-color: var(--background-color);
+}
+.botao-menu.ativo{
+    left:320px;
+     background-color: var(--background-color);
+
+}
+.conteudo{
+    margin-left: 80px;
+    padding: 40px;
+    color: var(--text-secondary-color);
+    background-color: var(--text-color);
+    transition: all 0.5s ease;
+    
+}
+.conteudo.ativo{
+    margin-left:350px;
+    background-color: var(--background-color);
+    color:  var(--text-color);
+}
+
+
+
+.sessão1{
+    flex-wrap: wrap;
+    display: flex;
+    width: 100vw;
+    height: 500px;
+    box-sizing: border-box;
+
+}
+
+.banner{
+    position:absolute;
+    width: 100vw;
+    padding: 10px 50px;
+    min-height: 250px;
+    
+    
+    
+}
+.banner img{
+   
+    height: 300px;
+    width: 100%;
+    border-radius: 8px;
+    object-fit:cover;
+    
+}
+.logo{
+    width: 150px;
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    left: 50%;
+    transform: translatex(-50%);
+    top: 250px;
+}
+.logo img{
+    width: 100px;
+    border-radius: 50%;
+     justify-items: center;
+    align-items: center;
+    
+}
+.logo h1{
+    text-align: center;
+    font-size: 19px;
+    font-weight: 700;
+}
+.logo p{
+    cursor: pointer;
+    color: #152e1d;
+}
+
+.modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 450px;
+    max-height: 700px;
+    padding: 20px;
+    border: 1px solid #001;
+    position: relative;
+    left: 50%;
+    border-radius: 8px;
+    background-color: #747a77;
+    transform: translateX(-50%);
+    display: none;
+}
+.modal img{
+    width: 100%;
+}
+
+.indicadores{
+    
+    align-items: center;
+    padding: 30px 50px 10px 50px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    list-style: none;
+    border-bottom: 0.5px solid #747a77;
+}
+.indicadores ul{
+    width: 100vw;
+    height: 30px;
+}
+.indicadores li{
+    font-size: 18px;
+    font-weight: 500;
+    color: #747a77;
+    cursor: pointer;
+    
+
+}
+.indicadores li:hover{
+    color: #152e1d;
+    border-bottom: 0.5px solid #152e1d;
+    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    
+}
+.almoço{
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 150px 100px;
+    gap: 15px;
+
+}
+
+.card{
+    width: 450px;
+    height: 150px;
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    border:1px solid #000f1f;
+    border-radius: 10px;
+    background-color: #747a7744;
+
+}
+.card img{
+    width: 100px;
+    height: 100px;
+    object-fit:cover;
+    border-radius: 8px;
+    
+}
