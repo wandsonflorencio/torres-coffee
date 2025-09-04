@@ -3,223 +3,511 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1B5E20">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Torres Coffee">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description" content="Torres Coffee - Cafeteria elegante com cardápio completo de almoços, bebidas e cafés">
+    <meta name="keywords" content="cafeteria, café, almoço, bebidas, torres coffee">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Torres Coffee</title>
+    
+    <title>Torres Coffee - Cafeteria Elegante</title>
+    
+    <!-- Favicon para mobile -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/logo.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
 </head>
 
 <body>
-    <div class="pesquisa">
-        <button class="botao-menu">
-
+    <header class="pesquisa" role="banner">
+        <button class="botao-menu" aria-label="Abrir menu de navegação" aria-expanded="false">
             <img class="fa-solid fa-bars" width="30" height="30" src="https://img.icons8.com/ios/50/menu--v7.png"
-                alt="menu--v7" />
+                alt="Menu de navegação" />
         </button>
-        <input placeholder="pesquisa" type="text">
-    </div>
-    <nav class="menu-lateral">
+        <input placeholder="🔍 Pesquisar produtos..." type="search" aria-label="Pesquisar produtos">
+    </header>
+    
+    <nav class="menu-lateral" role="navigation" aria-label="Menu principal">
         <ul>
-            <li><a href="#"><i class="fa-solid fa-house"></i>home</a></li>
-            <li><a href="#"><i class="fa-solid fa-circle-info"></i>sobre</a></li>
-            <li><a href="#"><i class="fa-solid fa-gears"></i>serviços</a></li>
-            <li><a href="#"><i class="fa-solid fa-envelope"></i>contato</a></li>
+            <li><a href="#home" aria-label="Ir para página inicial"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="#sobre" aria-label="Ir para seção sobre"><i class="fa-solid fa-circle-info"></i>Sobre</a></li>
+            <li><a href="#serviços" aria-label="Ir para seção de serviços"><i class="fa-solid fa-gears"></i>Serviços</a></li>
+            <li><a href="#contato" aria-label="Ir para seção de contato"><i class="fa-solid fa-envelope"></i>Contato</a></li>
         </ul>
     </nav>
 
-    <section class="sessão1">
-        <div class="banner">
-            <img src="assets/bares-restaurantes-03.webp">
+    <main>
+        <section class="sessão1" id="home" role="banner" aria-label="Banner principal">
+            <div class="banner">
+                <img src="assets/bares-restaurantes-03.webp" alt="Banner Torres Coffee - Ambiente da cafeteria">
+            </div>
+            <div class="logo">
+                <img src="assets/logo.png" alt="Logo Torres Coffee">
+                <h1>TORRES COFFEE</h1>
+                <div class="horario-info">
+                    <div class="tempo-preparo">
+                        <span class="clock-icon">🕐</span>
+                        <span class="tempo-texto">0-10min</span>
+                    </div>
+                    <button class="ver-horarios" aria-label="Ver horários de funcionamento">Ver mais</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
+            <img src="assets/logo.png" alt="Logo Torres Coffee">
+            <h1 id="modal-title">Torres Coffee</h1>
+            <h2 id="modal-description">HORÁRIOS DE FUNCIONAMENTO</h2>
+            <p>SEG - 07:00 às 19:00</p>
+            <p>TER - 07:00 às 19:00</p>
+            <p>QUA - 07:00 às 19:00</p>
+            <p>QUI - 07:00 às 19:00</p>
+            <p>SEX - 07:00 às 19:00</p>
+            <p>SÁB - 07:00 às 19:00</p>
+            <p style="margin-top: 20px; font-weight: 700; color: #1B5E20;">DOM - FECHADO</p>
         </div>
-        <div class="logo">
-            <img src="assets/logo.png">
-            <h1>TORRES COFFEE</h1>
-            <p>ver mais</p>
-        </div>
-    </section>
 
-    <div class="modal">
-        <img src="assets/logo.png">
-        <h1>torres coffee</h1>
-        <h2>HORÁRIOS DE FUNCIONAMENTO</h2>
-        <P>SEG - 07:00 às 19:00</P>
-        <P>TER - 07:00 às 19:00</P>
-        <P>QUA - 07:00 às 19:00</P>
-        <P>QUI - 07:00 às 19:00</P>
-        <P>SEX - 07:00 às 19:00</P>
-        <P>SÁB - 07:00 às 19:00</P>
-
-    </div>
-
-    <section class="sessão2">
-        <ul class="indicadores">
-            <li>almoço</li>
-            <li>bebidas</li>
-            <li>cafés</li>
-            <li>conveniência</li>
-            <li>croissants</li>
-            <li>cuscuz recheado</li>
-            <li>jantas</li>
-            <li>omeletes</li>
-            <li>pamonhas</li>
-            <li>salgados</li>
-            <li>sanduiches</li>
-            <li>sobremesas</li>
-            <li>sucos</li>
-            <li>tapiocas</li>
-            <li>vitaminas</li>
-
-        </ul>
-
-    </section>
-
-    <section >
-
-        <h1>ALMOÇOS</h1>
-        <div class="almoço">
-            <div class="card">
-                <div>
-                    <img src="assets/arrumadinho de charque.webp">
+        <section class="sessão2" id="sobre" role="region" aria-label="Categorias de produtos">
+            <nav aria-label="Filtros de categoria">
+                <div class="indicadores-container">
+                    <button class="scroll-nav scroll-left" aria-label="Rolar para esquerda">‹</button>
+                    <ul class="indicadores" role="tablist">
+                        <li role="tab" aria-selected="true" class="ativo" data-category="todos">Todos</li>
+                        <li role="tab" aria-selected="false" data-category="almoco">Almoço</li>
+                        <li role="tab" aria-selected="false" data-category="bebidas">Bebidas</li>
+                        <li role="tab" aria-selected="false" data-category="cafes">Cafés</li>
+                        <li role="tab" aria-selected="false" data-category="conveniencia">Conveniência</li>
+                        <li role="tab" aria-selected="false" data-category="croissants">Croissants</li>
+                        <li role="tab" aria-selected="false" data-category="cuscuz">Cuscuz Recheado</li>
+                        <li role="tab" aria-selected="false" data-category="jantas">Jantas</li>
+                        <li role="tab" aria-selected="false" data-category="omeletes">Omeletes</li>
+                        <li role="tab" aria-selected="false" data-category="pamonhas">Pamonhas</li>
+                        <li role="tab" aria-selected="false" data-category="salgados">Salgados</li>
+                        <li role="tab" aria-selected="false" data-category="sanduiches">Sanduíches</li>
+                        <li role="tab" aria-selected="false" data-category="sobremesas">Sobremesas</li>
+                        <li role="tab" aria-selected="false" data-category="sucos">Sucos</li>
+                        <li role="tab" aria-selected="false" data-category="tapiocas">Tapiocas</li>
+                        <li role="tab" aria-selected="false" data-category="vitaminas">Vitaminas</li>
+                    </ul>
+                    <button class="scroll-nav scroll-right" aria-label="Rolar para direita">›</button>
                 </div>
-                <div>
-                    <h3>arrumadinho de charque</h3>
-                    <p>feijão de corda, arroz, vinagrete, farofa e charque</p>
-                    <p>R$ 24,99</p>
+            </nav>
+        </section>
+
+        <section id="serviços" role="region" aria-label="Cardápio completo">
+            <h1>NOSSO CARDÁPIO</h1>
+            <div class="produtos-container" role="grid" aria-label="Lista de produtos">
+                
+                <!-- ALMOÇOS -->
+                <div class="card" data-category="almoco">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Arrumadinho de Charque">
+                    </div>
+                    <div>
+                        <h3>Arrumadinho de Charque</h3>
+                        <p>Feijão de corda, arroz, vinagrete, farofa e charque</p>
+                        <p class="preco">R$ 24,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="almoco">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Feijoada Completa">
+                    </div>
+                    <div>
+                        <h3>Feijoada Completa</h3>
+                        <p>Feijão preto, carnes, couve, farofa e arroz</p>
+                        <p class="preco">R$ 28,90</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="almoco">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Baião de Dois">
+                    </div>
+                    <div>
+                        <h3>Baião de Dois</h3>
+                        <p>Arroz com feijão, queijo coalho e carne seca</p>
+                        <p class="preco">R$ 26,50</p>
+                    </div>
+                </div>
+
+                <!-- BEBIDAS -->
+                <div class="card" data-category="bebidas">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Suco de Laranja Natural">
+                    </div>
+                    <div>
+                        <h3>Suco de Laranja Natural</h3>
+                        <p>Suco de laranja natural sem açúcar</p>
+                        <p class="preco">R$ 7,90</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Suco de Maracujá">
+                    </div>
+                    <div>
+                        <h3>Suco de Maracujá</h3>
+                        <p>Suco de maracujá natural com polpa</p>
+                        <p class="preco">R$ 8,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Água de Coco">
+                    </div>
+                    <div>
+                        <h3>Água de Coco</h3>
+                        <p>Água de coco natural gelada</p>
+                        <p class="preco">R$ 6,90</p>
+                    </div>
+                </div>
+
+                <!-- CAFÉS -->
+                <div class="card" data-category="cafes">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Café Expresso">
+                    </div>
+                    <div>
+                        <h3>Café Expresso</h3>
+                        <p>Café tradicional torrado e moído na hora</p>
+                        <p class="preco">R$ 4,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Cappuccino">
+                    </div>
+                    <div>
+                        <h3>Cappuccino</h3>
+                        <p>Café com leite vaporizado e espuma de leite</p>
+                        <p class="preco">R$ 8,90</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Latte Macchiato">
+                    </div>
+                    <div>
+                        <h3>Latte Macchiato</h3>
+                        <p>Leite vaporizado com café expresso</p>
+                        <p class="preco">R$ 9,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Mocha">
+                    </div>
+                    <div>
+                        <h3>Mocha</h3>
+                        <p>Café com chocolate e leite vaporizado</p>
+                        <p class="preco">R$ 10,90</p>
+                    </div>
+                </div>
+
+                <!-- CONVENIÊNCIA -->
+                <div class="card" data-category="conveniencia">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Água Mineral">
+                    </div>
+                    <div>
+                        <h3>Água Mineral</h3>
+                        <p>Água mineral 500ml</p>
+                        <p class="preco">R$ 3,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Refrigerante">
+                    </div>
+                    <div>
+                        <h3>Refrigerante</h3>
+                        <p>Refrigerante 350ml (vários sabores)</p>
+                        <p class="preco">R$ 5,90</p>
+                    </div>
+                </div>
+
+                <!-- CROISSANTS -->
+                <div class="card" data-category="croissants">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Croissant de Chocolate">
+                    </div>
+                    <div>
+                        <h3>Croissant de Chocolate</h3>
+                        <p>Croissant recheado com chocolate belga</p>
+                        <p class="preco">R$ 8,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="croissants">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Croissant de Presunto e Queijo">
+                    </div>
+                    <div>
+                        <h3>Croissant Presunto e Queijo</h3>
+                        <p>Croissant recheado com presunto e queijo</p>
+                        <p class="preco">R$ 9,90</p>
+                    </div>
+                </div>
+
+                <!-- CUSCUZ -->
+                <div class="card" data-category="cuscuz">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Cuscuz de Carne Seca">
+                    </div>
+                    <div>
+                        <h3>Cuscuz de Carne Seca</h3>
+                        <p>Cuscuz nordestino com carne seca e queijo</p>
+                        <p class="preco">R$ 18,90</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cuscuz">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Cuscuz de Frango">
+                    </div>
+                    <div>
+                        <h3>Cuscuz de Frango</h3>
+                        <p>Cuscuz com frango desfiado e legumes</p>
+                        <p class="preco">R$ 16,90</p>
+                    </div>
+                </div>
+
+                <!-- JANTAS -->
+                <div class="card" data-category="jantas">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Strogonoff de Frango">
+                    </div>
+                    <div>
+                        <h3>Strogonoff de Frango</h3>
+                        <p>Frango ao molho cremoso com arroz e batata</p>
+                        <p class="preco">R$ 22,90</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="jantas">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Lasanha à Bolonhesa">
+                    </div>
+                    <div>
+                        <h3>Lasanha à Bolonhesa</h3>
+                        <p>Lasanha com molho de carne e queijo</p>
+                        <p class="preco">R$ 25,90</p>
+                    </div>
+                </div>
+
+                <!-- OMELETES -->
+                <div class="card" data-category="omeletes">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Omelete de Queijo">
+                    </div>
+                    <div>
+                        <h3>Omelete de Queijo</h3>
+                        <p>Omelete recheado com queijo e ervas</p>
+                        <p class="preco">R$ 12,90</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="omeletes">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Omelete de Presunto">
+                    </div>
+                    <div>
+                        <h3>Omelete de Presunto</h3>
+                        <p>Omelete com presunto e queijo</p>
+                        <p class="preco">R$ 14,90</p>
+                    </div>
+                </div>
+
+                <!-- PAMONHAS -->
+                <div class="card" data-category="pamonhas">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Pamonha Salgada">
+                    </div>
+                    <div>
+                        <h3>Pamonha Salgada</h3>
+                        <p>Pamonha de milho com queijo e manteiga</p>
+                        <p class="preco">R$ 8,90</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="pamonhas">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Pamonha Doce">
+                    </div>
+                    <div>
+                        <h3>Pamonha Doce</h3>
+                        <p>Pamonha de milho doce com canela</p>
+                        <p class="preco">R$ 7,90</p>
+                    </div>
+                </div>
+
+                <!-- SALGADOS -->
+                <div class="card" data-category="salgados">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Coxinha de Frango">
+                    </div>
+                    <div>
+                        <h3>Coxinha de Frango</h3>
+                        <p>Coxinha de frango desfiado com catupiry</p>
+                        <p class="preco">R$ 6,90</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="salgados">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Pastel de Carne">
+                    </div>
+                    <div>
+                        <h3>Pastel de Carne</h3>
+                        <p>Pastel frito recheado com carne moída</p>
+                        <p class="preco">R$ 5,90</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="salgados">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Empada de Frango">
+                    </div>
+                    <div>
+                        <h3>Empada de Frango</h3>
+                        <p>Empada de frango com catupiry</p>
+                        <p class="preco">R$ 6,50</p>
+                    </div>
+                </div>
+
+                <!-- SANDUÍCHES -->
+                <div class="card" data-category="sanduiches">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="X-Burger">
+                    </div>
+                    <div>
+                        <h3>X-Burger</h3>
+                        <p>Hambúrguer com queijo, alface e tomate</p>
+                        <p class="preco">R$ 15,90</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sanduiches">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="X-Frango">
+                    </div>
+                    <div>
+                        <h3>X-Frango</h3>
+                        <p>Sanduíche de frango grelhado com queijo</p>
+                        <p class="preco">R$ 16,90</p>
+                    </div>
+                </div>
+
+                <!-- SOBREMESAS -->
+                <div class="card" data-category="sobremesas">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Pudim de Leite">
+                    </div>
+                    <div>
+                        <h3>Pudim de Leite</h3>
+                        <p>Pudim de leite condensado com calda</p>
+                        <p class="preco">R$ 8,90</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sobremesas">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Brigadeiro">
+                    </div>
+                    <div>
+                        <h3>Brigadeiro</h3>
+                        <p>Brigadeiro caseiro com chocolate belga</p>
+                        <p class="preco">R$ 4,90</p>
+                    </div>
+                </div>
+
+                <!-- SUCOS -->
+                <div class="card" data-category="sucos">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Suco de Limão">
+                    </div>
+                    <div>
+                        <h3>Suco de Limão</h3>
+                        <p>Suco de limão natural com açúcar</p>
+                        <p class="preco">R$ 6,90</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sucos">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Suco de Abacaxi">
+                    </div>
+                    <div>
+                        <h3>Suco de Abacaxi</h3>
+                        <p>Suco de abacaxi natural gelado</p>
+                        <p class="preco">R$ 7,50</p>
+                    </div>
+                </div>
+
+                <!-- TAPIOCAS -->
+                <div class="card" data-category="tapiocas">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Tapioca de Frango">
+                    </div>
+                    <div>
+                        <h3>Tapioca de Frango</h3>
+                        <p>Tapioca com frango desfiado e queijo</p>
+                        <p class="preco">R$ 12,90</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="tapiocas">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Tapioca de Carne Seca">
+                    </div>
+                    <div>
+                        <h3>Tapioca de Carne Seca</h3>
+                        <p>Tapioca com carne seca e queijo coalho</p>
+                        <p class="preco">R$ 15,90</p>
+                    </div>
+                </div>
+
+                <!-- VITAMINAS -->
+                <div class="card" data-category="vitaminas">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Vitamina de Banana">
+                    </div>
+                    <div>
+                        <h3>Vitamina de Banana</h3>
+                        <p>Vitamina de banana com leite e aveia</p>
+                        <p class="preco">R$ 9,90</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="vitaminas">
+                    <div>
+                        <img src="assets/arrumadinho de charque.webp" alt="Vitamina de Morango">
+                    </div>
+                    <div>
+                        <h3>Vitamina de Morango</h3>
+                        <p>Vitamina de morango com leite e granola</p>
+                        <p class="preco">R$ 10,90</p>
+                    </div>
                 </div>
 
             </div>
-            <div class="card">
-                <div>
-                    <img src="assets/arrumadinho de charque.webp">
-                </div>
-                <div>
-                    <h3>arrumadinho de charque</h3>
-                    <p>feijão de corda, arroz, vinagrete, farofa e charque</p>
-                    <p>R$ 24,99</p>
-                </div>
-
-            </div>
-            <div class="card">
-                <div>
-                    <img src="assets/arrumadinho de charque.webp">
-                </div>
-                <div>
-                    <h3>arrumadinho de charque</h3>
-                    <p>feijão de corda, arroz, vinagrete, farofa e charque</p>
-                    <p>R$ 24,99</p>
-                </div>
-
-            </div>
-            <div class="card">
-                <div>
-                    <img src="assets/arrumadinho de charque.webp">
-                </div>
-                <div>
-                    <h3>arrumadinho de charque</h3>
-                    <p>feijão de corda, arroz, vinagrete, farofa e charque</p>
-                    <p>R$ 24,99</p>
-                </div>
-
-            </div>
-             <div class="card">
-                <div>
-                    <img src="assets/arrumadinho de charque.webp">
-                </div>
-                <div>
-                    <h3>arrumadinho de charque</h3>
-                    <p>feijão de corda, arroz, vinagrete, farofa e charque</p>
-                    <p>R$ 24,99</p>
-                </div>
-
-            </div>
-             <div class="card">
-                <div>
-                    <img src="assets/arrumadinho de charque.webp">
-                </div>
-                <div>
-                    <h3>arrumadinho de charque</h3>
-                    <p>feijão de corda, arroz, vinagrete, farofa e charque</p>
-                    <p>R$ 24,99</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-     <section >
-
-        <h1>bebidas</h1>
-        <div class="almoço">
-            <div class="card">
-                <div>
-                    <img src="assets/arrumadinho de charque.webp">
-                </div>
-                <div>
-                    <h3>arrumadinho de charque</h3>
-                    <p>feijão de corda, arroz, vinagrete, farofa e charque</p>
-                    <p>R$ 24,99</p>
-                </div>
-
-            </div>
-            <div class="card">
-                <div>
-                    <img src="assets/arrumadinho de charque.webp">
-                </div>
-                <div>
-                    <h3>arrumadinho de charque</h3>
-                    <p>feijão de corda, arroz, vinagrete, farofa e charque</p>
-                    <p>R$ 24,99</p>
-                </div>
-
-            </div>
-            <div class="card">
-                <div>
-                    <img src="assets/arrumadinho de charque.webp">
-                </div>
-                <div>
-                    <h3>arrumadinho de charque</h3>
-                    <p>feijão de corda, arroz, vinagrete, farofa e charque</p>
-                    <p>R$ 24,99</p>
-                </div>
-
-            </div>
-            <div class="card">
-                <div>
-                    <img src="assets/arrumadinho de charque.webp">
-                </div>
-                <div>
-                    <h3>arrumadinho de charque</h3>
-                    <p>feijão de corda, arroz, vinagrete, farofa e charque</p>
-                    <p>R$ 24,99</p>
-                </div>
-
-            </div>
-             <div class="card">
-                <div>
-                    <img src="assets/arrumadinho de charque.webp">
-                </div>
-                <div>
-                    <h3>arrumadinho de charque</h3>
-                    <p>feijão de corda, arroz, vinagrete, farofa e charque</p>
-                    <p>R$ 24,99</p>
-                </div>
-
-            </div>
-             <div class="card">
-                <div>
-                    <img src="assets/arrumadinho de charque.webp">
-                </div>
-                <div>
-                    <h3>arrumadinho de charque</h3>
-                    <p>feijão de corda, arroz, vinagrete, farofa e charque</p>
-                    <p>R$ 24,99</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    
-
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
