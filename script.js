@@ -1,5 +1,4 @@
 
-// Elementos DOM
 const botao = document.querySelector('.botao-menu');
 const menulateral = document.querySelector('.menu-lateral');
 const modal = document.querySelector('.modal');
@@ -129,6 +128,16 @@ document.addEventListener('click', (e) => {
 logoVerMais.addEventListener('click', () => {
     if (!isModalOpen) {
         openModal();
+    }
+});
+
+// Evento para abrir modal de horários quando clicar em "Sobre"
+const sobreLink = document.querySelector('a[href="#sobre"]');
+sobreLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (!isModalOpen) {
+        openModal();
+        closeMenu(); // Fechar o menu lateral
     }
 });
 

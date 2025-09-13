@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     
     <title>Torres Coffee - Cafeteria Elegante</title>
@@ -32,14 +33,16 @@
                 alt="Menu de navegação" />
         </button>
         <input placeholder="🔍 Pesquisar produtos..." type="search" aria-label="Pesquisar produtos">
+        <div class="favorite-counter" id="favoriteCounter">
+            <i class="fas fa-heart"></i> <span id="favoriteCount">0</span>
+        </div>
     </header>
     
     <nav class="menu-lateral" role="navigation" aria-label="Menu principal">
         <ul>
             <li><a href="#home" aria-label="Ir para página inicial"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="#serviços" aria-label="Ir para seção de cardápio"><i class="fa-solid fa-book-open"></i>Cardápio</a></li>
             <li><a href="#sobre" aria-label="Ir para seção sobre"><i class="fa-solid fa-circle-info"></i>Sobre</a></li>
-            <li><a href="#serviços" aria-label="Ir para seção de serviços"><i class="fa-solid fa-gears"></i>Serviços</a></li>
-            <li><a href="#contato" aria-label="Ir para seção de contato"><i class="fa-solid fa-envelope"></i>Contato</a></li>
         </ul>
     </nav>
 
@@ -79,22 +82,22 @@
                 <div class="indicadores-container">
                     <button class="scroll-nav scroll-left" aria-label="Rolar para esquerda">‹</button>
                     <ul class="indicadores" role="tablist">
-                        <li role="tab" aria-selected="true" class="ativo" data-category="todos">Todos</li>
-                        <li role="tab" aria-selected="false" data-category="almoco">Almoço</li>
-                        <li role="tab" aria-selected="false" data-category="bebidas">Bebidas</li>
-                        <li role="tab" aria-selected="false" data-category="cafes">Cafés</li>
-                        <li role="tab" aria-selected="false" data-category="conveniencia">Conveniência</li>
-                        <li role="tab" aria-selected="false" data-category="croissants">Croissants</li>
-                        <li role="tab" aria-selected="false" data-category="cuscuz">Cuscuz Recheado</li>
-                        <li role="tab" aria-selected="false" data-category="jantas">Jantas</li>
-                        <li role="tab" aria-selected="false" data-category="omeletes">Omeletes</li>
-                        <li role="tab" aria-selected="false" data-category="pamonhas">Pamonhas</li>
-                        <li role="tab" aria-selected="false" data-category="salgados">Salgados</li>
-                        <li role="tab" aria-selected="false" data-category="sanduiches">Sanduíches</li>
-                        <li role="tab" aria-selected="false" data-category="sobremesas">Sobremesas</li>
-                        <li role="tab" aria-selected="false" data-category="sucos">Sucos</li>
-                        <li role="tab" aria-selected="false" data-category="tapiocas">Tapiocas</li>
-                        <li role="tab" aria-selected="false" data-category="vitaminas">Vitaminas</li>
+                        <li role="tab" aria-selected="true" class="ativo" data-category="todos"><i class="fas fa-th-large"></i> Todos</li>
+                        <li role="tab" aria-selected="false" data-category="almoco"><i class="fas fa-utensils"></i> Almoço</li>
+                        <li role="tab" aria-selected="false" data-category="bebidas"><i class="fas fa-glass-water"></i> Bebidas</li>
+                        <li role="tab" aria-selected="false" data-category="cafes"><i class="fas fa-coffee"></i> Cafés</li>
+                        <li role="tab" aria-selected="false" data-category="conveniencia"><i class="fas fa-store"></i> Conveniência</li>
+                        <li role="tab" aria-selected="false" data-category="croissants"><i class="fas fa-cookie-bite"></i> Croissants</li>
+                        <li role="tab" aria-selected="false" data-category="cuscuz"><i class="fas fa-bowl-food"></i> Cuscuz Recheado</li>
+                        <li role="tab" aria-selected="false" data-category="jantas"><i class="fas fa-dinner-plate"></i> Jantas</li>
+                        <li role="tab" aria-selected="false" data-category="omeletes"><i class="fas fa-egg"></i> Omeletes</li>
+                        <li role="tab" aria-selected="false" data-category="pamonhas"><i class="fas fa-corn"></i> Pamonhas</li>
+                        <li role="tab" aria-selected="false" data-category="salgados"><i class="fas fa-pizza-slice"></i> Salgados</li>
+                        <li role="tab" aria-selected="false" data-category="sanduiches"><i class="fas fa-hamburger"></i> Sanduíches</li>
+                        <li role="tab" aria-selected="false" data-category="sobremesas"><i class="fas fa-ice-cream"></i> Sobremesas</li>
+                        <li role="tab" aria-selected="false" data-category="sucos"><i class="fas fa-glass-water-droplet"></i> Sucos</li>
+                        <li role="tab" aria-selected="false" data-category="tapiocas"><i class="fas fa-circle"></i> Tapiocas</li>
+                        <li role="tab" aria-selected="false" data-category="vitaminas"><i class="fas fa-apple-whole"></i> Vitaminas</li>
                     </ul>
                     <button class="scroll-nav scroll-right" aria-label="Rolar para direita">›</button>
                 </div>
@@ -107,6 +110,9 @@
                 
                 <!-- ALMOÇOS -->
                 <div class="card" data-category="almoco">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
                         <img src="assets/arrumadinho de charque.webp" alt="Arrumadinho de Charque">
                     </div>
@@ -118,6 +124,9 @@
                 </div>
                 
                 <div class="card" data-category="almoco">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
                         <img src="assets/arrumadinho de charque.webp" alt="Feijoada Completa">
                     </div>
@@ -129,6 +138,9 @@
                 </div>
                 
                 <div class="card" data-category="almoco">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
                         <img src="assets/arrumadinho de charque.webp" alt="Baião de Dois">
                     </div>
