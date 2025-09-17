@@ -4,11 +4,12 @@ const menulateral = document.querySelector('.menu-lateral');
 const modal = document.querySelector('.modal');
 const logoVerMais = document.querySelector('.ver-horarios');
 const indicadores = document.querySelectorAll('.indicadores li');
-const cards = document.querySelectorAll('.card');
 const searchInput = document.querySelector('.pesquisa input');
-const scrollLeftBtn = document.querySelector('.scroll-left');
-const scrollRightBtn = document.querySelector('.scroll-right');
+// Botões de scroll removidos
 const indicadoresContainer = document.querySelector('.indicadores');
+
+// Variável para cards será definida no DOMContentLoaded
+let cards;
 
 // Estado da aplicação
 let currentCategory = 'todos';
@@ -241,6 +242,17 @@ function filterByCategory(category) {
         }
     }
     
+    // Se estamos em modo de busca, não aplica o filtro de categoria
+    if (isSearching && lastSearchTerm.length > 0) {
+        return;
+    }
+    
+    // Limpa a busca se mudou de categoria
+    if (isSearching) {
+        searchInput.value = '';
+        clearSearch();
+    }
+    
     // Filtra os cards
     filterCards(category);
     
@@ -255,145 +267,282 @@ function filterByCategory(category) {
 }
 
 function filterCards(category) {
-    cards.forEach((card, index) => {
+    if (!cards) {
+        cards = document.querySelectorAll('.card');
+    }
+    
+    const container = document.querySelector('.produtos-container');
+    const visibleCards = [];
+    
+    // Primeiro, coleta todos os cards visíveis
+    cards.forEach(card => {
         const cardCategory = card.getAttribute('data-category');
         
         if (category === 'todos' || cardCategory === category) {
-            card.style.display = 'flex';
-            // Animação de entrada
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            
-            setTimeout(() => {
-                card.style.transition = 'all 0.4s ease';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, index * 80);
+            visibleCards.push(card);
         } else {
             card.style.display = 'none';
         }
     });
-}
-
-// Sistema de navegação horizontal para categorias
-if (scrollLeftBtn && scrollRightBtn) {
-    scrollLeftBtn.addEventListener('click', () => {
-        scrollCategories('left');
-    });
     
-    scrollRightBtn.addEventListener('click', () => {
-        scrollCategories('right');
-    });
-    
-    // Suporte touch para botões de navegação
-    scrollLeftBtn.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        scrollCategories('left');
-    });
-    
-    scrollRightBtn.addEventListener('touchend', (e) => {
-        e.preventDefault();
-        scrollCategories('right');
-    });
-}
-
-function scrollCategories(direction) {
-    // Só permite scroll em dispositivos móveis
-    if (window.innerWidth > 768 || isScrolling) return;
-    
-    isScrolling = true;
-    const scrollAmount = 200;
-    const currentScroll = indicadoresContainer.scrollLeft;
-    
-    if (direction === 'left') {
-        indicadoresContainer.scrollTo({
-            left: currentScroll - scrollAmount,
-            behavior: 'smooth'
+    // Se for a categoria "todos", ordena os cards
+    if (category === 'todos') {
+        // Adiciona atributos de ordenação se não existirem
+        addOrderAttributes();
+        
+        visibleCards.sort((a, b) => {
+            const orderA = parseInt(a.getAttribute('data-order')) || 999;
+            const orderB = parseInt(b.getAttribute('data-order')) || 999;
+            return orderA - orderB;
         });
-    } else {
-        indicadoresContainer.scrollTo({
-            left: currentScroll + scrollAmount,
-            behavior: 'smooth'
+        
+        // Reordena os elementos no DOM
+        visibleCards.forEach(card => {
+            container.appendChild(card);
         });
     }
     
-    // Debounce para evitar múltiplos cliques
-    setTimeout(() => {
-        isScrolling = false;
-    }, 500);
+    // Exibe os cards com animação
+    visibleCards.forEach((card, index) => {
+        card.style.display = 'flex';
+        // Animação de entrada
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            card.style.transition = 'all 0.4s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 80);
+    });
 }
 
-// Atualizar visibilidade dos botões de navegação baseado na posição do scroll
-function updateScrollButtons() {
-    if (!scrollLeftBtn || !scrollRightBtn) return;
-    
-    // Só mostra os botões em dispositivos móveis
-    if (window.innerWidth > 768) {
-        scrollLeftBtn.style.display = 'none';
-        scrollRightBtn.style.display = 'none';
-        return;
-    }
-    
-    const { scrollLeft, scrollWidth, clientWidth } = indicadoresContainer;
-    
-    // Mostra/esconde botão esquerdo
-    if (scrollLeft <= 0) {
-        scrollLeftBtn.style.display = 'none';
-    } else {
-        scrollLeftBtn.style.display = 'flex';
-    }
-    
-    // Mostra/esconde botão direito
-    if (scrollLeft + clientWidth >= scrollWidth - 5) {
-        scrollRightBtn.style.display = 'none';
-    } else {
-        scrollRightBtn.style.display = 'flex';
-    }
-}
+// Sistema de navegação horizontal removido - setas foram removidas
 
-// Event listeners para scroll das categorias
-if (indicadoresContainer) {
-    indicadoresContainer.addEventListener('scroll', updateScrollButtons);
-    indicadoresContainer.addEventListener('touchmove', updateScrollButtons);
-}
-
-// Sistema de busca otimizado para mobile
+// Sistema de busca otimizado
 let searchTimeout;
+let isSearching = false;
+let lastSearchTerm = '';
+
 searchInput.addEventListener('input', (e) => {
     clearTimeout(searchTimeout);
+    
+    const searchTerm = e.target.value.trim();
     
     // Adiciona indicador de loading
     searchInput.style.borderColor = '#388E3C';
     
     searchTimeout = setTimeout(() => {
-        const searchTerm = e.target.value.toLowerCase();
         performSearch(searchTerm);
         searchInput.style.borderColor = '#1B5E20';
     }, 300);
 });
 
+// Busca ao pressionar Enter
+searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        const searchTerm = e.target.value.trim();
+        performSearch(searchTerm);
+    }
+});
+
 function performSearch(searchTerm) {
-    cards.forEach(card => {
+    if (!cards) return;
+    
+    isSearching = searchTerm.length > 0;
+    lastSearchTerm = searchTerm;
+    
+    if (searchTerm === '') {
+        // Se não há termo de busca, volta ao filtro atual
+        filterCards(currentCategory);
+        return;
+    }
+    
+    const searchTermLower = searchTerm.toLowerCase();
+    let foundCount = 0;
+    
+    cards.forEach((card, index) => {
         const title = card.querySelector('h3').textContent.toLowerCase();
         const description = card.querySelector('p:first-of-type').textContent.toLowerCase();
+        const price = card.querySelector('.preco').textContent.toLowerCase();
         
-        if (title.includes(searchTerm) || description.includes(searchTerm)) {
+        // Busca em título, descrição e preço
+        const matches = title.includes(searchTermLower) || 
+                       description.includes(searchTermLower) || 
+                       price.includes(searchTermLower);
+        
+        if (matches) {
             card.style.display = 'flex';
-            card.style.opacity = '1';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            
+            // Animação de entrada escalonada
+            setTimeout(() => {
+                card.style.transition = 'all 0.4s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, foundCount * 50);
+            
+            foundCount++;
         } else {
-            card.style.opacity = '0.3';
+            card.style.display = 'none';
         }
     });
+    
+    // Mostra mensagem se não encontrou resultados
+    showSearchResults(foundCount, searchTerm);
+    
+    // Atualiza contador de resultados
+    updateSearchCounter(foundCount, searchTerm);
+}
+
+function showSearchResults(count, searchTerm) {
+    // Remove mensagem anterior se existir
+    const existingMessage = document.querySelector('.search-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    if (count === 0 && searchTerm.length > 0) {
+        // Cria mensagem de "não encontrado"
+        const message = document.createElement('div');
+        message.className = 'search-message';
+        message.innerHTML = `
+            <div style="
+                text-align: center;
+                padding: 40px 20px;
+                color: #666;
+                font-size: 16px;
+            ">
+                <i class="fas fa-search" style="font-size: 48px; color: #ccc; margin-bottom: 16px;"></i>
+                <h3 style="margin-bottom: 8px; color: #333;">Nenhum produto encontrado</h3>
+                <p>Não encontramos produtos para "<strong>${searchTerm}</strong>"</p>
+                <p style="margin-top: 8px; font-size: 14px;">Tente usar termos diferentes ou verifique a ortografia</p>
+            </div>
+        `;
+        
+        const container = document.querySelector('.produtos-container');
+        container.appendChild(message);
+    }
 }
 
 // Limpar busca
 searchInput.addEventListener('blur', () => {
-    if (searchInput.value === '') {
-        cards.forEach(card => {
-            card.style.opacity = '1';
-        });
+    if (searchInput.value === '' && isSearching) {
+        clearSearch();
     }
 });
+
+// Função para limpar a busca
+function clearSearch() {
+    isSearching = false;
+    lastSearchTerm = '';
+    
+    // Remove mensagem de busca se existir
+    const existingMessage = document.querySelector('.search-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    // Remove contador de resultados se existir
+    const existingCounter = document.querySelector('.search-counter');
+    if (existingCounter) {
+        existingCounter.remove();
+    }
+    
+    // Volta ao filtro atual
+    filterCards(currentCategory);
+}
+
+// Adiciona botão de limpar busca
+function addClearSearchButton() {
+    const clearBtn = document.createElement('button');
+    clearBtn.innerHTML = '✕';
+    clearBtn.className = 'clear-search-btn';
+    clearBtn.style.cssText = `
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 18px;
+        color: #999;
+        cursor: pointer;
+        padding: 5px;
+        display: none;
+    `;
+    
+    clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        clearSearch();
+        clearBtn.style.display = 'none';
+    });
+    
+    // Mostra/esconde botão baseado no conteúdo do input
+    searchInput.addEventListener('input', () => {
+        if (searchInput.value.length > 0) {
+            clearBtn.style.display = 'block';
+        } else {
+            clearBtn.style.display = 'none';
+        }
+    });
+    
+    // Adiciona o botão ao container de pesquisa
+    const searchContainer = document.querySelector('.pesquisa');
+    searchContainer.style.position = 'relative';
+    searchContainer.appendChild(clearBtn);
+}
+
+// Adiciona funcionalidade de busca por teclas de atalho
+document.addEventListener('keydown', (e) => {
+    // Ctrl/Cmd + K para focar na busca
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        searchInput.focus();
+    }
+    
+    // ESC para limpar busca
+    if (e.key === 'Escape' && isSearching) {
+        searchInput.value = '';
+        clearSearch();
+        searchInput.blur();
+    }
+});
+
+// Adiciona contador de resultados
+function updateSearchCounter(count, searchTerm) {
+    // Remove contador anterior se existir
+    const existingCounter = document.querySelector('.search-counter');
+    if (existingCounter) {
+        existingCounter.remove();
+    }
+    
+    if (count > 0 && searchTerm.length > 0) {
+        const counter = document.createElement('div');
+        counter.className = 'search-counter';
+        counter.innerHTML = `
+            <div style="
+                text-align: center;
+                padding: 10px 20px;
+                background: rgba(27, 94, 32, 0.1);
+                color: var(--primary-color);
+                font-size: 14px;
+                font-weight: 600;
+                border-radius: 20px;
+                margin: 10px auto;
+                max-width: 300px;
+            ">
+                <i class="fas fa-search" style="margin-right: 8px;"></i>
+                ${count} produto${count > 1 ? 's' : ''} encontrado${count > 1 ? 's' : ''} para "${searchTerm}"
+            </div>
+        `;
+        
+        const container = document.querySelector('.produtos-container');
+        container.insertBefore(counter, container.firstChild);
+    }
+}
 
 // Animações de scroll otimizadas para mobile
 const observerOptions = {
@@ -410,27 +559,42 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observa todos os cards para animação
-cards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'all 0.5s ease';
-    observer.observe(card);
-});
+// Função para aplicar animações aos cards
+function applyCardAnimations() {
+    if (!cards) return;
+    
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.5s ease';
+        observer.observe(card);
+    });
+}
 
-// Efeito parallax suave para mobile
+// Efeito parallax otimizado
 let ticking = false;
+const parallaxElements = {
+    banner: null,
+    logo: null
+};
+
+function initParallax() {
+    parallaxElements.banner = document.querySelector('.banner');
+    parallaxElements.logo = document.querySelector('.logo');
+}
+
+function updateParallax() {
+    if (!parallaxElements.banner || !parallaxElements.logo) return;
+    
+    const scrolled = window.pageYOffset;
+    parallaxElements.banner.style.transform = `translateY(${scrolled * 0.3}px)`;
+    parallaxElements.logo.style.transform = `translate(-50%, -50%) translateY(${scrolled * 0.1}px)`;
+}
+
 window.addEventListener('scroll', () => {
     if (!ticking) {
         requestAnimationFrame(() => {
-            const scrolled = window.pageYOffset;
-            const banner = document.querySelector('.banner');
-            const logo = document.querySelector('.logo');
-            
-            if (banner && logo) {
-                banner.style.transform = `translateY(${scrolled * 0.3}px)`;
-                logo.style.transform = `translate(-50%, -50%) translateY(${scrolled * 0.1}px)`;
-            }
+            updateParallax();
             ticking = false;
         });
         ticking = true;
@@ -457,86 +621,143 @@ document.querySelectorAll('.menu-lateral a').forEach(link => {
     });
 });
 
-// Adicionar IDs às seções para navegação
+// Inicialização otimizada
 document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('section');
-    const menuItems = ['home', 'sobre', 'serviços', 'contato'];
+    // Define a variável cards agora que o DOM está carregado
+    cards = document.querySelectorAll('.card');
     
-    sections.forEach((section, index) => {
-        if (index < menuItems.length) {
-            section.id = menuItems[index];
-        }
-    });
+    // Inicializa componentes
+    initParallax();
+    addOrderAttributes();
+    addClearSearchButton();
+    applyCardAnimations();
+    setupCardInteractions();
+    setupFavoriteSystem();
     
-    // Inicializa o filtro com "todos" selecionado
-    filterByCategory('todos');
-    
-    // Atualiza botões de navegação inicialmente
-    updateScrollButtons();
+    // Força a reordenação inicial
+    setTimeout(() => {
+        filterByCategory('todos');
+    }, 100);
 });
 
-// Efeito de hover otimizado para mobile
-cards.forEach(card => {
-    // Hover para desktop
-    card.addEventListener('mouseenter', () => {
-        if (window.innerWidth > 768) {
-            card.style.transform = 'translateY(-4px) scale(1.02)';
-        }
-    });
+// Função para configurar interações dos cards
+function setupCardInteractions() {
+    if (!cards) return;
     
-    card.addEventListener('mouseleave', () => {
-        if (window.innerWidth > 768) {
-            card.style.transform = 'translateY(0) scale(1)';
-        }
+    cards.forEach(card => {
+        // Hover para desktop
+        card.addEventListener('mouseenter', () => {
+            if (window.innerWidth > 768) {
+                card.style.transform = 'translateY(-4px) scale(1.02)';
+            }
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            if (window.innerWidth > 768) {
+                card.style.transform = 'translateY(0) scale(1)';
+            }
+        });
+        
+        // Touch feedback para mobile
+        card.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            card.style.transform = 'scale(0.98)';
+        });
+        
+        card.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            card.style.transform = 'scale(1)';
+        });
     });
-    
-    // Touch feedback para mobile
-    card.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        card.style.transform = 'scale(0.98)';
-    });
-    
-    card.addEventListener('touchend', (e) => {
-        e.preventDefault();
-        card.style.transform = 'scale(1)';
-    });
-});
+}
 
-// Sistema de favoritos otimizado para mobile
-cards.forEach(card => {
-    const favoriteBtn = document.createElement('button');
-    favoriteBtn.innerHTML = '❤️';
-    favoriteBtn.className = 'favorite-btn';
-    favoriteBtn.setAttribute('aria-label', 'Adicionar aos favoritos');
+// Função para configurar sistema de favoritos
+function setupFavoriteSystem() {
+    if (!cards) return;
     
-    card.style.position = 'relative';
-    card.appendChild(favoriteBtn);
-    
-    // Verifica se já é favorito
-    const cardTitle = card.querySelector('h3').textContent;
-    if (localStorage.getItem(`favorite_${cardTitle}`)) {
-        favoriteBtn.style.opacity = '1';
-        favoriteBtn.style.transform = 'scale(1.2)';
+    cards.forEach(card => {
+        const favoriteBtn = document.createElement('button');
+        favoriteBtn.innerHTML = '❤️';
+        favoriteBtn.className = 'favorite-btn';
+        favoriteBtn.setAttribute('aria-label', 'Adicionar aos favoritos');
+        
+        card.style.position = 'relative';
+        card.appendChild(favoriteBtn);
+        
+        // Verifica se já é favorito
+        const cardTitle = card.querySelector('h3').textContent;
+        if (localStorage.getItem(`favorite_${cardTitle}`)) {
+            favoriteBtn.style.opacity = '1';
+            favoriteBtn.style.transform = 'scale(1.2)';
+        }
+        
+        favoriteBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleFavorite(cardTitle, favoriteBtn);
+        });
+        
+        // Suporte touch para favoritos
+        favoriteBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            favoriteBtn.style.transform = 'scale(0.9)';
+        });
+        
+        favoriteBtn.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            favoriteBtn.style.transform = 'scale(1.2)';
+            toggleFavorite(cardTitle, favoriteBtn);
+        });
+    });
+}
+
+// Função para adicionar atributos de ordenação
+function addOrderAttributes() {
+    if (!cards) {
+        cards = document.querySelectorAll('.card');
     }
     
-    favoriteBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleFavorite(cardTitle, favoriteBtn);
-    });
+    // Define a ordem das categorias
+    const categoryOrder = {
+        'almoco': 1,
+        'bebidas': 10,
+        'cafes': 20,
+        'conveniencia': 30,
+        'croissants': 40,
+        'cuscuz': 50,
+        'jantas': 60,
+        'omeletes': 70,
+        'pamonhas': 80,
+        'salgados': 90,
+        'sanduiches': 100,
+        'sobremesas': 110,
+        'sucos': 120,
+        'tapiocas': 130,
+        'vitaminas': 140
+    };
     
-    // Suporte touch para favoritos
-    favoriteBtn.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        favoriteBtn.style.transform = 'scale(0.9)';
-    });
+    // Contador para cada categoria
+    const categoryCounters = {};
     
-    favoriteBtn.addEventListener('touchend', (e) => {
-        e.preventDefault();
-        favoriteBtn.style.transform = 'scale(1.2)';
-        toggleFavorite(cardTitle, favoriteBtn);
+    cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const currentOrder = card.getAttribute('data-order');
+        
+        // Se não tem data-order, adiciona baseado na categoria
+        if (!currentOrder && categoryOrder[category]) {
+            if (!categoryCounters[category]) {
+                categoryCounters[category] = 0;
+            }
+            categoryCounters[category]++;
+            
+            const baseOrder = categoryOrder[category];
+            const finalOrder = baseOrder + categoryCounters[category];
+            card.setAttribute('data-order', finalOrder);
+        }
     });
-});
+}
+
+// Funções otimizadas para mobile
 
 function toggleFavorite(cardTitle, favoriteBtn) {
     const isFavorite = localStorage.getItem(`favorite_${cardTitle}`);
@@ -636,8 +857,7 @@ window.addEventListener('resize', () => {
             }
         }
         
-        // Atualiza botões de navegação após resize
-        updateScrollButtons();
+        // Botões de navegação removidos
     }, 250);
 });
 

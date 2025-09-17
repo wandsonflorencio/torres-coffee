@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=2">
     <link rel="stylesheet" href="style.css">
     
     <title>Torres Coffee - Cafeteria Elegante</title>
@@ -80,7 +80,6 @@
         <section class="sessão2" id="sobre" role="region" aria-label="Categorias de produtos">
             <nav aria-label="Filtros de categoria">
                 <div class="indicadores-container">
-                    <button class="scroll-nav scroll-left" aria-label="Rolar para esquerda">‹</button>
                     <ul class="indicadores" role="tablist">
                         <li role="tab" aria-selected="true" class="ativo" data-category="todos"><i class="fas fa-th-large"></i> Todos</li>
                         <li role="tab" aria-selected="false" data-category="almoco"><i class="fas fa-utensils"></i> Almoço</li>
@@ -89,17 +88,16 @@
                         <li role="tab" aria-selected="false" data-category="conveniencia"><i class="fas fa-store"></i> Conveniência</li>
                         <li role="tab" aria-selected="false" data-category="croissants"><i class="fas fa-cookie-bite"></i> Croissants</li>
                         <li role="tab" aria-selected="false" data-category="cuscuz"><i class="fas fa-bowl-food"></i> Cuscuz Recheado</li>
-                        <li role="tab" aria-selected="false" data-category="jantas"><i class="fas fa-dinner-plate"></i> Jantas</li>
+                        <li role="tab" aria-selected="false" data-category="jantas"><i class="fas fa-moon"></i> Jantas</li>
                         <li role="tab" aria-selected="false" data-category="omeletes"><i class="fas fa-egg"></i> Omeletes</li>
-                        <li role="tab" aria-selected="false" data-category="pamonhas"><i class="fas fa-corn"></i> Pamonhas</li>
+                        <li role="tab" aria-selected="false" data-category="pamonhas"><i class="fas fa-sun"></i> Pamonhas</li>
                         <li role="tab" aria-selected="false" data-category="salgados"><i class="fas fa-pizza-slice"></i> Salgados</li>
                         <li role="tab" aria-selected="false" data-category="sanduiches"><i class="fas fa-hamburger"></i> Sanduíches</li>
                         <li role="tab" aria-selected="false" data-category="sobremesas"><i class="fas fa-ice-cream"></i> Sobremesas</li>
                         <li role="tab" aria-selected="false" data-category="sucos"><i class="fas fa-glass-water-droplet"></i> Sucos</li>
-                        <li role="tab" aria-selected="false" data-category="tapiocas"><i class="fas fa-circle"></i> Tapiocas</li>
+                        <li role="tab" aria-selected="false" data-category="tapiocas"><i class="fas fa-dot-circle"></i> Tapiocas</li>
                         <li role="tab" aria-selected="false" data-category="vitaminas"><i class="fas fa-apple-whole"></i> Vitaminas</li>
                     </ul>
-                    <button class="scroll-nav scroll-right" aria-label="Rolar para direita">›</button>
                 </div>
             </nav>
         </section>
@@ -109,7 +107,7 @@
             <div class="produtos-container" role="grid" aria-label="Lista de produtos">
                 
                 <!-- ALMOÇOS -->
-                <div class="card" data-category="almoco">
+                <div class="card" data-category="almoco" data-order="1">
                     <button class="favorite-btn" aria-label="Adicionar aos favoritos">
                         <i class="far fa-heart"></i>
                     </button>
@@ -123,405 +121,1902 @@
                     </div>
                 </div>
                 
-                <div class="card" data-category="almoco">
+                <div class="card" data-category="almoco" data-order="2">
                     <button class="favorite-btn" aria-label="Adicionar aos favoritos">
                         <i class="far fa-heart"></i>
                     </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Feijoada Completa">
+                        <img src="assets/b8435349-e413-4cb8-b69f-80682987c477_20250724103212.webp" alt="Estrogonofe de Frango">
                     </div>
                     <div>
-                        <h3>Feijoada Completa</h3>
-                        <p>Feijão preto, carnes, couve, farofa e arroz</p>
-                        <p class="preco">R$ 28,90</p>
+                        <h3>Estrogonofe de Frango</h3>
+                        <p>Arroz, batata palha</p>
+                        <p class="preco">R$ 24,99</p>
                     </div>
                 </div>
                 
-                <div class="card" data-category="almoco">
+                <div class="card" data-category="almoco" data-order="3">
                     <button class="favorite-btn" aria-label="Adicionar aos favoritos">
                         <i class="far fa-heart"></i>
                     </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Baião de Dois">
+                        <img src="assets/product_not_found.jpg" alt="Peixe no Coco">
                     </div>
                     <div>
-                        <h3>Baião de Dois</h3>
-                        <p>Arroz com feijão, queijo coalho e carne seca</p>
-                        <p class="preco">R$ 26,50</p>
+                        <h3>Peixe no Coco</h3>
+                        <p>Peixe tilápia, molho de coco</p>
+                        <p class="preco">R$ 29,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="almoco" data-order="4">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/fefaa118-2d45-443a-a9ff-65033132b796_20250724103211.webp" alt="Bife ao Molho">
+                    </div>
+                    <div>
+                        <h3>Bife ao Molho</h3>
+                        <p>Feijão mulato ou preto, arroz branco, salada</p>
+                        <p class="preco">R$ 24,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="almoco" data-order="5">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/d8812dd5-bf59-4ae1-b244-839deb0b2eb4_20250724103212.webp" alt="Lasanha de Carne">
+                    </div>
+                    <div>
+                        <h3>Lasanha de Carne</h3>
+                        <p>Lasanha de carne com molho</p>
+                        <p class="preco">R$ 26,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="almoco" data-order="6">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/8bcc8e83-266e-4d8d-81ea-2a28f73d8677_20250724103213.webp" alt="Peixe Tilápia">
+                    </div>
+                    <div>
+                        <h3>Peixe Tilápia</h3>
+                        <p>Arroz, feijão mulato e salada</p>
+                        <p class="preco">R$ 29,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="almoco" data-order="7">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/58049ac7-3973-4c25-b636-9c8af1dc2bd5_20250724103212.webp" alt="Escondidinho de Charque">
+                    </div>
+                    <div>
+                        <h3>Escondidinho de Charque</h3>
+                        <p>Escondidinho de charque, arroz e batata palha</p>
+                        <p class="preco">R$ 24,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="almoco" data-order="8">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/40254a48-2ed5-46ee-ad81-6f7f81e9e75e_20250724103213 (1).webp" alt="Macarronada com Almôndegas Artesanais">
+                    </div>
+                    <div>
+                        <h3>Macarronada com Almôndegas Artesanais</h3>
+                        <p>Macarronada ao molho de tomate com almôndegas artesanais</p>
+                        <p class="preco">R$ 24,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="almoco" data-order="9">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Xerém com Galinha">
+                    </div>
+                    <div>
+                        <h3>Xerém com Galinha</h3>
+                        <p>Xerém, galinha guisada e molho</p>
+                        <p class="preco">R$ 22,99</p>
                     </div>
                 </div>
 
                 <!-- BEBIDAS -->
-                <div class="card" data-category="bebidas">
+                <div class="card" data-category="bebidas" data-order="10">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Suco de Laranja Natural">
+                        <img src="assets/377a98f9-eaba-4e3e-8454-cc2035ce3951_20250724103213.webp" alt="Água Mineral 500ml">
                     </div>
                     <div>
-                        <h3>Suco de Laranja Natural</h3>
-                        <p>Suco de laranja natural sem açúcar</p>
-                        <p class="preco">R$ 7,90</p>
+                        <h3>Água Mineral 500ml</h3>
+                        <p>Água mineral natural</p>
+                        <p class="preco">R$ 4,00</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas" data-order="11">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/181a10fe-6451-4c9d-b035-11bfbe8bbaf0_20250724103214.webp" alt="Chocolate Quente 180ml">
+                    </div>
+                    <div>
+                        <h3>Chocolate Quente 180ml</h3>
+                        <p>Chocolate quente cremoso</p>
+                        <p class="preco">R$ 11,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas" data-order="12">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/9270a166-137b-459f-a420-5dabc233f7d4_20250724103215.webp" alt="Coca Cola KS 290ml">
+                    </div>
+                    <div>
+                        <h3>Coca Cola KS 290ml</h3>
+                        <p>Refrigerante Coca-Cola</p>
+                        <p class="preco">R$ 5,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas" data-order="14">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Del Valle Lata 290ml">
+                    </div>
+                    <div>
+                        <h3>Del Valle Lata 290ml</h3>
+                        <p>Suco Del Valle</p>
+                        <p class="preco">R$ 7,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas" data-order="15">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/9ebec885-a546-42bb-992c-43d107523318_20250724103220.webp" alt="Fanta Laranja 350ml">
+                    </div>
+                    <div>
+                        <h3>Fanta Laranja 350ml</h3>
+                        <p>Refrigerante Fanta Laranja</p>
+                        <p class="preco">R$ 6,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas" data-order="16">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/86e0176c-68cc-4d30-94d6-00b8f8292ea3_20250724103217.webp" alt="Pepsi 350ml">
+                    </div>
+                    <div>
+                        <h3>Pepsi 350ml</h3>
+                        <p>Refrigerante Pepsi</p>
+                        <p class="preco">R$ 6,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas" data-order="17">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/10c49c7d-6641-4881-a196-3d098a3a1c0c_20250724103214.webp" alt="Água Mineral com Gás 500ml">
+                    </div>
+                    <div>
+                        <h3>Água Mineral com Gás 500ml</h3>
+                        <p>Água mineral com gás</p>
+                        <p class="preco">R$ 5,00</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas" data-order="18">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/e2fd328b-6bf6-4fc0-b05e-7a41a6979cfa_20250724103214.webp" alt="Chocolate Quente com Chantilly 180ml">
+                    </div>
+                    <div>
+                        <h3>Chocolate Quente com Chantilly 180ml</h3>
+                        <p>Chocolate quente com chantilly</p>
+                        <p class="preco">R$ 14,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas" data-order="19">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Coca Lata 220ml">
+                    </div>
+                    <div>
+                        <h3>Coca Lata 220ml</h3>
+                        <p>Refrigerante Coca-Cola</p>
+                        <p class="preco">R$ 5,00</p>
                     </div>
                 </div>
                 
                 <div class="card" data-category="bebidas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Suco de Maracujá">
+                        <img src="assets/7cfd33ba-6492-4aab-97b7-5fff093b8d6e_20250724103215.webp" alt="Energético">
                     </div>
                     <div>
-                        <h3>Suco de Maracujá</h3>
-                        <p>Suco de maracujá natural com polpa</p>
-                        <p class="preco">R$ 8,50</p>
+                        <h3>Energético</h3>
+                        <p>Bebida energética</p>
+                        <p class="preco">R$ 14,99</p>
                     </div>
                 </div>
                 
                 <div class="card" data-category="bebidas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Água de Coco">
+                        <img src="assets/9e895a63-11fe-4b59-b5fa-751d1ff52bca_20250724103216.webp" alt="Guaraná Antarctica 350ml">
                     </div>
                     <div>
-                        <h3>Água de Coco</h3>
-                        <p>Água de coco natural gelada</p>
-                        <p class="preco">R$ 6,90</p>
+                        <h3>Guaraná Antarctica 350ml</h3>
+                        <p>Refrigerante Guaraná Antarctica</p>
+                        <p class="preco">R$ 6,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/07a4b686-5315-44ce-b204-5a7f1c2cc489_20250724103217.webp" alt="Pepsi Black 350ml">
+                    </div>
+                    <div>
+                        <h3>Pepsi Black 350ml</h3>
+                        <p>Refrigerante Pepsi Black</p>
+                        <p class="preco">R$ 6,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/0e51f639-7024-4e7f-8c5c-67c0bae0621c_20250724103214.webp" alt="Chá">
+                    </div>
+                    <div>
+                        <h3>Chá</h3>
+                        <p>Chá quente</p>
+                        <p class="preco">R$ 4,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/412b51e8-2822-49e7-9a73-d04f429ac74f_20250724103215.webp" alt="Coca Cola 350ml">
+                    </div>
+                    <div>
+                        <h3>Coca Cola 350ml</h3>
+                        <p>Refrigerante Coca-Cola</p>
+                        <p class="preco">R$ 6,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/e72de72c-1ec3-4cc7-bb05-1a89697224f1_20250724103215.webp" alt="Coca-Cola Zero 350ml">
+                    </div>
+                    <div>
+                        <h3>Coca-Cola Zero 350ml</h3>
+                        <p>Refrigerante Coca-Cola Zero</p>
+                        <p class="preco">R$ 6,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/7cfd33ba-6492-4aab-97b7-5fff093b8d6e_20250724103215.webp" alt="Energético">
+                    </div>
+                    <div>
+                        <h3>Energético</h3>
+                        <p>Bebida energética</p>
+                        <p class="preco">R$ 14,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/5885361c-d844-4e90-aed1-62ceed79d8ad_20250724103216.webp" alt="H2O 500ml">
+                    </div>
+                    <div>
+                        <h3>H2O 500ml</h3>
+                        <p>Água H2O</p>
+                        <p class="preco">R$ 7,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="bebidas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/f1f645bf-1f0c-469b-b68b-1740e095bf4f_20250724103217.webp" alt="Schweppes Citrus">
+                    </div>
+                    <div>
+                        <h3>Schweppes Citrus</h3>
+                        <p>Refrigerante Schweppes Citrus</p>
+                        <p class="preco">R$ 6,50</p>
                     </div>
                 </div>
 
                 <!-- CAFÉS -->
                 <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Café Expresso">
+                        <img src="assets/product_not_found.jpg" alt="Café Mel de Uruçu 130ml">
                     </div>
                     <div>
-                        <h3>Café Expresso</h3>
-                        <p>Café tradicional torrado e moído na hora</p>
-                        <p class="preco">R$ 4,50</p>
-                    </div>
-                </div>
-                
-                <div class="card" data-category="cafes">
-                    <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Cappuccino">
-                    </div>
-                    <div>
-                        <h3>Cappuccino</h3>
-                        <p>Café com leite vaporizado e espuma de leite</p>
-                        <p class="preco">R$ 8,90</p>
+                        <h3>Café Mel de Uruçu 130ml</h3>
+                        <p>Expresso duplo + espuma do leite + fios de mel de uruçu</p>
+                        <p class="preco">R$ 10,99</p>
                     </div>
                 </div>
                 
                 <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Latte Macchiato">
+                        <img src="assets/08de5b4f-e32c-4d8e-8220-75cc48e83bc2_20250724103218.webp" alt="Cappuccino Chantilly">
                     </div>
                     <div>
-                        <h3>Latte Macchiato</h3>
-                        <p>Leite vaporizado com café expresso</p>
-                        <p class="preco">R$ 9,50</p>
+                        <h3>Cappuccino Chantilly</h3>
+                        <p>Café expresso, leite vaporizado, chocolate, chantilly e nutela nas bordas</p>
+                        <p class="preco">R$ 14,99</p>
                     </div>
                 </div>
                 
                 <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Mocha">
+                        <img src="assets/b7a2fe72-1f66-427b-9cbe-c4eb068360d3_20250724103218.webp" alt="Coado com Leite 180ml">
                     </div>
                     <div>
-                        <h3>Mocha</h3>
-                        <p>Café com chocolate e leite vaporizado</p>
-                        <p class="preco">R$ 10,90</p>
+                        <h3>Coado com Leite 180ml</h3>
+                        <p>Café coado com leite</p>
+                        <p class="preco">R$ 6,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/21f03293-709b-4343-86dd-354e235ae902_20250724103219.webp" alt="Expresso 180ml">
+                    </div>
+                    <div>
+                        <h3>Expresso 180ml</h3>
+                        <p>Café expresso tradicional</p>
+                        <p class="preco">R$ 10,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/adbd6cf1-a8fb-4d6c-822a-a34c5d8b6919_20250724103220.webp" alt="Frapê de Nutella">
+                    </div>
+                    <div>
+                        <h3>Frapê de Nutella</h3>
+                        <p>Frapê gelado com nutella</p>
+                        <p class="preco">R$ 18,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/e0e90f1f-e2fe-468e-802e-66550d2a99ca_20250724103221.webp" alt="Leite com Nescau e Chantilly">
+                    </div>
+                    <div>
+                        <h3>Leite com Nescau e Chantilly</h3>
+                        <p>Leite com nescau e chantilly</p>
+                        <p class="preco">R$ 14,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Canelinha 180ml">
+                    </div>
+                    <div>
+                        <h3>Canelinha 180ml</h3>
+                        <p>Café com canela</p>
+                        <p class="preco">R$ 11,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/13397d06-4ffd-4b2b-b107-1b1b47c2bbda_20250724103218.webp" alt="Coado 180ml">
+                    </div>
+                    <div>
+                        <h3>Coado 180ml</h3>
+                        <p>Café coado tradicional</p>
+                        <p class="preco">R$ 5,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/13397d06-4ffd-4b2b-b107-1b1b47c2bbda_20250724103218.webp" alt="Descafeinado 180ml">
+                    </div>
+                    <div>
+                        <h3>Descafeinado 180ml</h3>
+                        <p>Café descafeinado</p>
+                        <p class="preco">R$ 6,00</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/21f03293-709b-4343-86dd-354e235ae902_20250724103219.webp" alt="Expresso 50ml">
+                    </div>
+                    <div>
+                        <h3>Expresso 50ml</h3>
+                        <p>Café expresso pequeno</p>
+                        <p class="preco">R$ 6,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/9ebec885-a546-42bb-992c-43d107523318_20250724103220.webp" alt="Late Gelado Baunilha">
+                    </div>
+                    <div>
+                        <h3>Late Gelado Baunilha</h3>
+                        <p>Latte gelado com baunilha</p>
+                        <p class="preco">R$ 14,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/7f98f6e3-e137-4ef4-9002-4953466b987a_20250724103221.webp" alt="Moka 180ml">
+                    </div>
+                    <div>
+                        <h3>Moka 180ml</h3>
+                        <p>Café moka com chocolate</p>
+                        <p class="preco">R$ 14,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Cappuccino 180ml">
+                    </div>
+                    <div>
+                        <h3>Cappuccino 180ml</h3>
+                        <p>Café expresso, leite vaporizado e chocolate</p>
+                        <p class="preco">R$ 11,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/13397d06-4ffd-4b2b-b107-1b1b47c2bbda_20250724103218.webp" alt="Coado 50ml">
+                    </div>
+                    <div>
+                        <h3>Coado 50ml</h3>
+                        <p>Café coado pequeno</p>
+                        <p class="preco">R$ 4,00</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/6ffd239d-ab3f-44ac-a7e9-52c5375d3f98_20250724103219.webp" alt="Espumone 180ml">
+                    </div>
+                    <div>
+                        <h3>Espumone 180ml</h3>
+                        <p>Café com espuma</p>
+                        <p class="preco">R$ 11,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/adbd6cf1-a8fb-4d6c-822a-a34c5d8b6919_20250724103220.webp" alt="Frapê de Banoffee">
+                    </div>
+                    <div>
+                        <h3>Frapê de Banoffee</h3>
+                        <p>Frapê de banoffee</p>
+                        <p class="preco">R$ 18,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/9ebec885-a546-42bb-992c-43d107523318_20250724103220.webp" alt="Late Gelado Chocolate">
+                    </div>
+                    <div>
+                        <h3>Late Gelado Chocolate</h3>
+                        <p>Latte gelado com chocolate</p>
+                        <p class="preco">R$ 14,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cafes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/f242f4dc-8bba-4114-9a60-c036fb890fb1_20250724103222.webp" alt="Orange Coffee">
+                    </div>
+                    <div>
+                        <h3>Orange Coffee</h3>
+                        <p>Café com laranja</p>
+                        <p class="preco">R$ 14,99</p>
                     </div>
                 </div>
 
                 <!-- CONVENIÊNCIA -->
                 <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Água Mineral">
+                        <img src="assets/product_not_found.jpg" alt="Bala Café">
                     </div>
                     <div>
-                        <h3>Água Mineral</h3>
-                        <p>Água mineral 500ml</p>
+                        <h3>Bala Café</h3>
+                        <p>Bala de café</p>
+                        <p class="preco">R$ 0,25</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Chiclete">
+                    </div>
+                    <div>
+                        <h3>Chiclete</h3>
+                        <p>Chiclete</p>
+                        <p class="preco">R$ 0,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Diamante Negro">
+                    </div>
+                    <div>
+                        <h3>Diamante Negro</h3>
+                        <p>Chocolate Diamante Negro</p>
+                        <p class="preco">R$ 5,00</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="M&M">
+                    </div>
+                    <div>
+                        <h3>M&M</h3>
+                        <p>Chocolate M&M</p>
+                        <p class="preco">R$ 4,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Ouro Branco">
+                    </div>
+                    <div>
+                        <h3>Ouro Branco</h3>
+                        <p>Chocolate Ouro Branco</p>
+                        <p class="preco">R$ 2,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Sonho de Valsa">
+                    </div>
+                    <div>
+                        <h3>Sonho de Valsa</h3>
+                        <p>Chocolate Sonho de Valsa</p>
+                        <p class="preco">R$ 2,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Trident Max">
+                    </div>
+                    <div>
+                        <h3>Trident Max</h3>
+                        <p>Chiclete Trident Max</p>
+                        <p class="preco">R$ 5,00</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Batom Garoto">
+                    </div>
+                    <div>
+                        <h3>Batom Garoto</h3>
+                        <p>Chocolate Batom Garoto</p>
+                        <p class="preco">R$ 2,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Chocolate Talento">
+                    </div>
+                    <div>
+                        <h3>Chocolate Talento</h3>
+                        <p>Chocolate Talento</p>
                         <p class="preco">R$ 3,50</p>
                     </div>
                 </div>
                 
                 <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Refrigerante">
+                        <img src="assets/product_not_found.jpg" alt="Halls Pastilha">
                     </div>
                     <div>
-                        <h3>Refrigerante</h3>
-                        <p>Refrigerante 350ml (vários sabores)</p>
-                        <p class="preco">R$ 5,90</p>
+                        <h3>Halls Pastilha</h3>
+                        <p>Pastilha Halls</p>
+                        <p class="preco">R$ 2,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Mentos Pastilha">
+                    </div>
+                    <div>
+                        <h3>Mentos Pastilha</h3>
+                        <p>Pastilha Mentos</p>
+                        <p class="preco">R$ 2,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Prestigio">
+                    </div>
+                    <div>
+                        <h3>Prestigio</h3>
+                        <p>Chocolate Prestigio</p>
+                        <p class="preco">R$ 4,00</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Trento Massino Dark">
+                    </div>
+                    <div>
+                        <h3>Trento Massino Dark</h3>
+                        <p>Chocolate Trento Massino Dark</p>
+                        <p class="preco">R$ 3,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Twix">
+                    </div>
+                    <div>
+                        <h3>Twix</h3>
+                        <p>Chocolate Twix</p>
+                        <p class="preco">R$ 4,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Bis Xtra">
+                    </div>
+                    <div>
+                        <h3>Bis Xtra</h3>
+                        <p>Chocolate Bis Xtra</p>
+                        <p class="preco">R$ 5,00</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Chokito">
+                    </div>
+                    <div>
+                        <h3>Chokito</h3>
+                        <p>Chocolate Chokito</p>
+                        <p class="preco">R$ 4,00</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Kit Kat">
+                    </div>
+                    <div>
+                        <h3>Kit Kat</h3>
+                        <p>Chocolate Kit Kat</p>
+                        <p class="preco">R$ 5,00</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Mentos Pure">
+                    </div>
+                    <div>
+                        <h3>Mentos Pure</h3>
+                        <p>Chiclete Mentos Pure</p>
+                        <p class="preco">R$ 3,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Snickers">
+                    </div>
+                    <div>
+                        <h3>Snickers</h3>
+                        <p>Chocolate Snickers</p>
+                        <p class="preco">R$ 4,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="conveniencia">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Trident">
+                    </div>
+                    <div>
+                        <h3>Trident</h3>
+                        <p>Chiclete Trident</p>
+                        <p class="preco">R$ 2,99</p>
                     </div>
                 </div>
 
                 <!-- CROISSANTS -->
                 <div class="card" data-category="croissants">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Croissant de Chocolate">
+                        <img src="assets/3eda28c4-76d1-4dbb-9fd6-3c855f40d1c8_20250724103222.webp" alt="Croissant">
                     </div>
                     <div>
-                        <h3>Croissant de Chocolate</h3>
-                        <p>Croissant recheado com chocolate belga</p>
-                        <p class="preco">R$ 8,50</p>
+                        <h3>Croissant</h3>
+                        <p>Croissant tradicional</p>
+                        <p class="preco">R$ 14,99</p>
                     </div>
                 </div>
                 
-                <div class="card" data-category="croissants">
+                <!-- CUSCUZ RECHEADO -->
+                <div class="card" data-category="cuscuz">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Croissant de Presunto e Queijo">
+                        <img src="assets/b64959d9-28eb-49b6-bcfb-6ce73dc3884f_20250724103222 (1).webp" alt="Cuscuz Calabresa">
                     </div>
                     <div>
-                        <h3>Croissant Presunto e Queijo</h3>
-                        <p>Croissant recheado com presunto e queijo</p>
-                        <p class="preco">R$ 9,90</p>
+                        <h3>Cuscuz Calabresa</h3>
+                        <p>Calabresa, queijo mussarela ou coalho, creme cheese</p>
+                        <p class="preco">R$ 17,99</p>
                     </div>
                 </div>
 
-                <!-- CUSCUZ -->
                 <div class="card" data-category="cuscuz">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Cuscuz de Carne Seca">
+                        <img src="assets/b64959d9-28eb-49b6-bcfb-6ce73dc3884f_20250724103222 (1).webp" alt="Cuscuz Misto">
                     </div>
                     <div>
-                        <h3>Cuscuz de Carne Seca</h3>
-                        <p>Cuscuz nordestino com carne seca e queijo</p>
-                        <p class="preco">R$ 18,90</p>
+                        <h3>Cuscuz Misto</h3>
+                        <p>Queijo mussarela, presunto, creme cheese</p>
+                        <p class="preco">R$ 17,99</p>
                     </div>
                 </div>
                 
                 <div class="card" data-category="cuscuz">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Cuscuz de Frango">
+                        <img src="assets/bed407e0-a4d7-4b96-be6e-59b462845435_20250724103223.webp" alt="Cuscuz Recheado Frango com Bacon">
                     </div>
                     <div>
-                        <h3>Cuscuz de Frango</h3>
-                        <p>Cuscuz com frango desfiado e legumes</p>
-                        <p class="preco">R$ 16,90</p>
+                        <h3>Cuscuz Recheado Frango com Bacon</h3>
+                        <p>Cuscuz com frango e bacon</p>
+                        <p class="preco">R$ 20,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cuscuz">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/b64959d9-28eb-49b6-bcfb-6ce73dc3884f_20250724103222 (1).webp" alt="Cuscuz Charque com Queijo">
+                    </div>
+                    <div>
+                        <h3>Cuscuz Charque com Queijo</h3>
+                        <p>Charque, queijo mussarela ou coalho, creme cheese</p>
+                        <p class="preco">R$ 20,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cuscuz">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/119a5fc2-3cd9-41cd-ae9d-4d61e699b5d0_20250724103223.webp" alt="Cuscuz Queijo">
+                    </div>
+                    <div>
+                        <h3>Cuscuz Queijo</h3>
+                        <p>Queijo mussarela ou coalho, creme cheese</p>
+                        <p class="preco">R$ 17,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cuscuz">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/bed407e0-a4d7-4b96-be6e-59b462845435_20250724103223.webp" alt="Cuscuz Frango com Queijo">
+                    </div>
+                    <div>
+                        <h3>Cuscuz Frango com Queijo</h3>
+                        <p>Frango, queijo mussarela ou coalho, creme cheese</p>
+                        <p class="preco">R$ 17,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="cuscuz">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/b64959d9-28eb-49b6-bcfb-6ce73dc3884f_20250724103222 (1).webp" alt="Cuscuz Recheado Carne de Sol com Queijo Coalho">
+                    </div>
+                    <div>
+                        <h3>Cuscuz Recheado Carne de Sol com Queijo Coalho</h3>
+                        <p>Cuscuz com carne de sol e queijo coalho</p>
+                        <p class="preco">R$ 20,99</p>
                     </div>
                 </div>
 
                 <!-- JANTAS -->
                 <div class="card" data-category="jantas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Strogonoff de Frango">
+                        <img src="assets/61dc3684-fc53-4e77-92f9-316660e78fac_20250724103224.webp" alt="Caldo Verde">
                     </div>
                     <div>
-                        <h3>Strogonoff de Frango</h3>
-                        <p>Frango ao molho cremoso com arroz e batata</p>
-                        <p class="preco">R$ 22,90</p>
+                        <h3>Caldo Verde</h3>
+                        <p>Caldo verde tradicional</p>
+                        <p class="preco">R$ 13,99</p>
                     </div>
                 </div>
                 
                 <div class="card" data-category="jantas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Lasanha à Bolonhesa">
+                        <img src="assets/sopa.webp" alt="Sopa de Carne">
                     </div>
                     <div>
-                        <h3>Lasanha à Bolonhesa</h3>
-                        <p>Lasanha com molho de carne e queijo</p>
-                        <p class="preco">R$ 25,90</p>
+                        <h3>Sopa de Carne</h3>
+                        <p>Com 1 pão francês</p>
+                        <p class="preco">R$ 13,99</p>
                     </div>
                 </div>
 
                 <!-- OMELETES -->
                 <div class="card" data-category="omeletes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Omelete de Queijo">
+                        <img src="assets/33ed4369-2564-4841-8fff-90604591434b_20250724103225.webp" alt="Omelete de Frango">
                     </div>
                     <div>
-                        <h3>Omelete de Queijo</h3>
-                        <p>Omelete recheado com queijo e ervas</p>
-                        <p class="preco">R$ 12,90</p>
+                        <h3>Omelete de Frango</h3>
+                        <p>Verdura, frango e queijo</p>
+                        <p class="preco">R$ 16,99</p>
                     </div>
                 </div>
                 
                 <div class="card" data-category="omeletes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Omelete de Presunto">
+                        <img src="assets/5975d338-267b-401c-a1e6-b5f53df9f787_20250724103226.webp" alt="Omelete Frango com Bacon">
+                    </div>
+                    <div>
+                        <h3>Omelete Frango com Bacon</h3>
+                        <p>Omelete com frango e bacon</p>
+                        <p class="preco">R$ 17,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="omeletes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/03a93aac-4314-4b1f-ae3e-a59347aed992_20250724103225.webp" alt="Omelete de Presunto">
                     </div>
                     <div>
                         <h3>Omelete de Presunto</h3>
-                        <p>Omelete com presunto e queijo</p>
-                        <p class="preco">R$ 14,90</p>
+                        <p>Ovos, verduras e presunto</p>
+                        <p class="preco">R$ 15,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="omeletes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/6dc78214-4f4c-4b72-8225-77159f2f8b13_20250724103226.webp" alt="Omelete Simples">
+                    </div>
+                    <div>
+                        <h3>Omelete Simples</h3>
+                        <p>Ovos e verduras</p>
+                        <p class="preco">R$ 13,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="omeletes">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/eb7a4cda-9d76-40b8-8520-570318507571_20250724103225.webp" alt="Omelete de Queijo">
+                    </div>
+                    <div>
+                        <h3>Omelete de Queijo</h3>
+                        <p>Ovos, verduras e queijo mussarela</p>
+                        <p class="preco">R$ 15,99</p>
                     </div>
                 </div>
 
                 <!-- PAMONHAS -->
                 <div class="card" data-category="pamonhas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Pamonha Salgada">
+                        <img src="assets/05a0232c-b4b2-49cf-b477-60937173073e_20250724103226.webp" alt="Pamonha com Manteiga">
                     </div>
                     <div>
-                        <h3>Pamonha Salgada</h3>
-                        <p>Pamonha de milho com queijo e manteiga</p>
-                        <p class="preco">R$ 8,90</p>
+                        <h3>Pamonha com Manteiga</h3>
+                        <p>Pamonha com manteiga</p>
+                        <p class="preco">R$ 13,99</p>
                     </div>
                 </div>
                 
                 <div class="card" data-category="pamonhas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Pamonha Doce">
+                        <img src="assets/05a0232c-b4b2-49cf-b477-60937173073e_20250724103226.webp" alt="Pamonha com Queijo Coalho">
                     </div>
                     <div>
-                        <h3>Pamonha Doce</h3>
-                        <p>Pamonha de milho doce com canela</p>
-                        <p class="preco">R$ 7,90</p>
+                        <h3>Pamonha com Queijo Coalho</h3>
+                        <p>Pamonha com queijo coalho</p>
+                        <p class="preco">R$ 17,99</p>
                     </div>
                 </div>
 
                 <!-- SALGADOS -->
                 <div class="card" data-category="salgados">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Coxinha de Frango">
+                        <img src="assets/d8655fb6-2014-461b-abf7-42971bf08b94_20250724103227.webp" alt="Coxinha de Frango">
                     </div>
                     <div>
                         <h3>Coxinha de Frango</h3>
-                        <p>Coxinha de frango desfiado com catupiry</p>
-                        <p class="preco">R$ 6,90</p>
+                        <p>Coxinha de frango</p>
+                        <p class="preco">R$ 8,99</p>
                     </div>
                 </div>
                 
                 <div class="card" data-category="salgados">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Pastel de Carne">
-                    </div>
-                    <div>
-                        <h3>Pastel de Carne</h3>
-                        <p>Pastel frito recheado com carne moída</p>
-                        <p class="preco">R$ 5,90</p>
-                    </div>
-                </div>
-                
-                <div class="card" data-category="salgados">
-                    <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Empada de Frango">
+                        <img src="assets/2a233663-ce24-43e1-bf9e-a71d4f8ecf27_20250724103227.webp" alt="Empada de Frango">
                     </div>
                     <div>
                         <h3>Empada de Frango</h3>
-                        <p>Empada de frango com catupiry</p>
-                        <p class="preco">R$ 6,50</p>
+                        <p>Empada de frango</p>
+                        <p class="preco">R$ 11,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="salgados">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Pastel de Forno">
+                    </div>
+                    <div>
+                        <h3>Pastel de Forno</h3>
+                        <p>Pastel de forno</p>
+                        <p class="preco">R$ 10,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="salgados">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Pote de Biscoito">
+                    </div>
+                    <div>
+                        <h3>Pote de Biscoito</h3>
+                        <p>Pote de biscoito</p>
+                        <p class="preco">R$ 7,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="salgados">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/a2f8fbb9-7ec7-44cb-ab78-a8a844e2c4f9_20250724103228.webp" alt="Quiche">
+                    </div>
+                    <div>
+                        <h3>Quiche</h3>
+                        <p>Quiche</p>
+                        <p class="preco">R$ 11,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="salgados">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/5b231aa6-e3b7-4d2a-bb74-77c1381541f7_20250724103227.webp" alt="Folhado Misto ou Frango">
+                    </div>
+                    <div>
+                        <h3>Folhado Misto ou Frango</h3>
+                        <p>Queijo, presunto e frango e salada</p>
+                        <p class="preco">R$ 14,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="salgados">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Pote de Cookies">
+                    </div>
+                    <div>
+                        <h3>Pote de Cookies</h3>
+                        <p>Pote de cookies</p>
+                        <p class="preco">R$ 9,99</p>
                     </div>
                 </div>
 
                 <!-- SANDUÍCHES -->
                 <div class="card" data-category="sanduiches">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="X-Burger">
+                        <img src="assets/ce8de6f4-7973-4ca2-ad26-071b392f7a33_20250724103228.webp" alt="Bauru">
                     </div>
                     <div>
-                        <h3>X-Burger</h3>
-                        <p>Hambúrguer com queijo, alface e tomate</p>
-                        <p class="preco">R$ 15,90</p>
+                        <h3>Bauru</h3>
+                        <p>Pão francês ou caixa com queijo mussarela, presunto e salada</p>
+                        <p class="preco">R$ 12,99</p>
                     </div>
                 </div>
                 
                 <div class="card" data-category="sanduiches">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="X-Frango">
+                        <img src="assets/product_not_found.jpg" alt="Pão Francês com Ovo">
                     </div>
                     <div>
-                        <h3>X-Frango</h3>
-                        <p>Sanduíche de frango grelhado com queijo</p>
-                        <p class="preco">R$ 16,90</p>
+                        <h3>Pão Francês com Ovo</h3>
+                        <p>Na chapa</p>
+                        <p class="preco">R$ 6,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sanduiches">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Pão Francês Misto">
+                    </div>
+                    <div>
+                        <h3>Pão Francês Misto</h3>
+                        <p>Pão francês ou caixa com queijo mussarela e presunto</p>
+                        <p class="preco">R$ 9,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sanduiches">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Pão Francês com Manteiga na Chapa">
+                    </div>
+                    <div>
+                        <h3>Pão Francês com Manteiga na Chapa</h3>
+                        <p>Pão francês com manteiga na chapa</p>
+                        <p class="preco">R$ 3,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sanduiches">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Pão Francês com Queijo Coalho na Chapa">
+                    </div>
+                    <div>
+                        <h3>Pão Francês com Queijo Coalho na Chapa</h3>
+                        <p>Pão francês com queijo coalho na chapa</p>
+                        <p class="preco">R$ 8,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sanduiches">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Pão Francês com Mortadela na Chapa">
+                    </div>
+                    <div>
+                        <h3>Pão Francês com Mortadela na Chapa</h3>
+                        <p>Pão francês com mortadela na chapa</p>
+                        <p class="preco">R$ 8,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sanduiches">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Pão Francês com Queijo do Reino na Chapa">
+                    </div>
+                    <div>
+                        <h3>Pão Francês com Queijo do Reino na Chapa</h3>
+                        <p>Pão francês com queijo do reino na chapa</p>
+                        <p class="preco">R$ 11,99</p>
                     </div>
                 </div>
 
                 <!-- SOBREMESAS -->
                 <div class="card" data-category="sobremesas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Pudim de Leite">
+                        <img src="assets/7c3fc86f-36d9-44a5-a187-56236ff16dfe_20250724103229.webp" alt="Banoffee">
                     </div>
                     <div>
-                        <h3>Pudim de Leite</h3>
-                        <p>Pudim de leite condensado com calda</p>
-                        <p class="preco">R$ 8,90</p>
+                        <h3>Banoffee</h3>
+                        <p>Torta de banana com doce de leite</p>
+                        <p class="preco">R$ 15,99</p>
                     </div>
                 </div>
                 
                 <div class="card" data-category="sobremesas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Brigadeiro">
+                        <img src="assets/e56e304e-73ec-4bfb-bc66-71048defc391_20250806102035.webp" alt="Bombom de Morango com Pistache">
                     </div>
                     <div>
-                        <h3>Brigadeiro</h3>
-                        <p>Brigadeiro caseiro com chocolate belga</p>
-                        <p class="preco">R$ 4,90</p>
+                        <h3>Bombom de Morango com Pistache</h3>
+                        <p>Bombom de morango com pistache</p>
+                        <p class="preco">R$ 7,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sobremesas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/ed6ea264-3c34-4a08-bb62-5847f8a49f8c_20250724103229.webp" alt="Brownie Plus">
+                    </div>
+                    <div>
+                        <h3>Brownie Plus</h3>
+                        <p>Brownie com recheio de ninho, e uma bola de sorvete com calda de chocolate</p>
+                        <p class="preco">R$ 21,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sobremesas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Ovos de Páscoa 350g">
+                    </div>
+                    <div>
+                        <h3>Ovos de Páscoa 350g</h3>
+                        <p>Ovos de páscoa 350g</p>
+                        <p class="preco">R$ 74,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sobremesas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/8c650094-20d8-4f90-9716-dce75c35fc5a_20250724103229.webp" alt="Bolo Simples">
+                    </div>
+                    <div>
+                        <h3>Bolo Simples</h3>
+                        <p>Bolo simples</p>
+                        <p class="preco">R$ 9,00</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sobremesas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Brigadeiro de Café">
+                    </div>
+                    <div>
+                        <h3>Brigadeiro de Café</h3>
+                        <p>Brigadeiro de café</p>
+                        <p class="preco">R$ 3,00</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sobremesas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Copo da Felicidade">
+                    </div>
+                    <div>
+                        <h3>Copo da Felicidade</h3>
+                        <p>Copo da felicidade</p>
+                        <p class="preco">R$ 14,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sobremesas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/43cea997-76c8-4554-a0a8-9110342ac22b_20250724103230.webp" alt="Pudim de Leite Condensado Fatia">
+                    </div>
+                    <div>
+                        <h3>Pudim de Leite Condensado Fatia</h3>
+                        <p>Pudim de leite condensado fatia</p>
+                        <p class="preco">R$ 13,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sobremesas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/deb3ea3f-f373-42df-ad00-0c92dd34a880_20250804102110.webp" alt="Bombom de Morango">
+                    </div>
+                    <div>
+                        <h3>Bombom de Morango</h3>
+                        <p>Bombom de morango</p>
+                        <p class="preco">R$ 6,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sobremesas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Brownie">
+                    </div>
+                    <div>
+                        <h3>Brownie</h3>
+                        <p>Brownie</p>
+                        <p class="preco">R$ 4,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sobremesas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Docinhos">
+                    </div>
+                    <div>
+                        <h3>Docinhos</h3>
+                        <p>Docinhos</p>
+                        <p class="preco">R$ 2,50</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sobremesas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/5e1aeaf2-c0ec-4e3b-bf7f-ee74822a19cf_20250724103230.webp" alt="Tortas Finas">
+                    </div>
+                    <div>
+                        <h3>Tortas Finas</h3>
+                        <p>Tortas finas</p>
+                        <p class="preco">R$ 15,99</p>
                     </div>
                 </div>
 
                 <!-- SUCOS -->
                 <div class="card" data-category="sucos">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Suco de Limão">
+                        <img src="assets/f788e9d0-1ecd-4487-b731-f3ca2085fb1b_20250724103232.webp" alt="Abacaxi 340ml">
                     </div>
                     <div>
-                        <h3>Suco de Limão</h3>
-                        <p>Suco de limão natural com açúcar</p>
-                        <p class="preco">R$ 6,90</p>
+                        <h3>Abacaxi 340ml</h3>
+                        <p>Suco natural de Abacaxi (gelado)</p>
+                        <p class="preco">R$ 6,99</p>
                     </div>
                 </div>
                 
                 <div class="card" data-category="sucos">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Suco de Abacaxi">
+                        <img src="assets/141e8c55-80a4-48fd-bed1-286f29451eb9_20250724103231.webp" alt="Goiaba 340ml">
                     </div>
                     <div>
-                        <h3>Suco de Abacaxi</h3>
-                        <p>Suco de abacaxi natural gelado</p>
-                        <p class="preco">R$ 7,50</p>
+                        <h3>Goiaba 340ml</h3>
+                        <p>Suco de goiaba</p>
+                        <p class="preco">R$ 6,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sucos">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/beae88cd-536a-4520-9340-9720bf8afe34_20250724103230.webp" alt="Limão 340ml">
+                    </div>
+                    <div>
+                        <h3>Limão 340ml</h3>
+                        <p>Suco de limão</p>
+                        <p class="preco">R$ 8,00</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sucos">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/90235394-9549-4c86-9474-ce7676913dc6_20250724103232.webp" alt="Cajá 340ml">
+                    </div>
+                    <div>
+                        <h3>Cajá 340ml</h3>
+                        <p>Suco de cajá</p>
+                        <p class="preco">R$ 6,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sucos">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/ee5a9e5c-26d7-4382-a6a0-87620567ed75_20250724103232.webp" alt="Graviola 340ml">
+                    </div>
+                    <div>
+                        <h3>Graviola 340ml</h3>
+                        <p>Suco de graviola</p>
+                        <p class="preco">R$ 6,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sucos">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/90235394-9549-4c86-9474-ce7676913dc6_20250724103232.webp" alt="Maracujá 340ml">
+                    </div>
+                    <div>
+                        <h3>Maracujá 340ml</h3>
+                        <p>Suco natural de Maracujá (gelado)</p>
+                        <p class="preco">R$ 6,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sucos">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/90235394-9549-4c86-9474-ce7676913dc6_20250724103232.webp" alt="Caju 340ml">
+                    </div>
+                    <div>
+                        <h3>Caju 340ml</h3>
+                        <p>Suco natural de Caju (gelado)</p>
+                        <p class="preco">R$ 6,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sucos">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/90235394-9549-4c86-9474-ce7676913dc6_20250724103232.webp" alt="Laranja 340ml">
+                    </div>
+                    <div>
+                        <h3>Laranja 340ml</h3>
+                        <p>Suco de laranja</p>
+                        <p class="preco">R$ 8,00</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="sucos">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/ce0ffc88-a8e8-4231-9e5f-3f7039b082b4_20250724103233.webp" alt="Morango 340ml">
+                    </div>
+                    <div>
+                        <h3>Morango 340ml</h3>
+                        <p>Suco natural de Morango (gelado)</p>
+                        <p class="preco">R$ 6,99</p>
                     </div>
                 </div>
 
                 <!-- TAPIOCAS -->
                 <div class="card" data-category="tapiocas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Tapioca de Frango">
+                        <img src="assets/product_not_found.jpg" alt="Tapioca Carne de Sol com Queijo">
                     </div>
                     <div>
-                        <h3>Tapioca de Frango</h3>
-                        <p>Tapioca com frango desfiado e queijo</p>
-                        <p class="preco">R$ 12,90</p>
+                        <h3>Tapioca Carne de Sol com Queijo</h3>
+                        <p>Tapioca com carne de sol e queijo</p>
+                        <p class="preco">R$ 15,99</p>
                     </div>
                 </div>
                 
                 <div class="card" data-category="tapiocas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Tapioca de Carne Seca">
+                        <img src="assets/product_not_found.jpg" alt="Tapioca Coco">
                     </div>
                     <div>
-                        <h3>Tapioca de Carne Seca</h3>
-                        <p>Tapioca com carne seca e queijo coalho</p>
-                        <p class="preco">R$ 15,90</p>
+                        <h3>Tapioca Coco</h3>
+                        <p>Tapioca com coco</p>
+                        <p class="preco">R$ 7,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="tapiocas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Tapioca Frango">
+                    </div>
+                    <div>
+                        <h3>Tapioca Frango</h3>
+                        <p>Tapioca com frango</p>
+                        <p class="preco">R$ 12,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="tapiocas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Tapioca Queijo do Reino">
+                    </div>
+                    <div>
+                        <h3>Tapioca Queijo do Reino</h3>
+                        <p>Tapioca com queijo do reino</p>
+                        <p class="preco">R$ 15,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="tapiocas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Tapioca Charque">
+                    </div>
+                    <div>
+                        <h3>Tapioca Charque</h3>
+                        <p>Tapioca com charque</p>
+                        <p class="preco">R$ 13,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="tapiocas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Tapioca Coco com Leite Condensado">
+                    </div>
+                    <div>
+                        <h3>Tapioca Coco com Leite Condensado</h3>
+                        <p>Tapioca com coco e leite condensado</p>
+                        <p class="preco">R$ 8,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="tapiocas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Tapioca Frango com Queijo Mussarela">
+                    </div>
+                    <div>
+                        <h3>Tapioca Frango com Queijo Mussarela</h3>
+                        <p>Tapioca com frango e queijo mussarela</p>
+                        <p class="preco">R$ 14,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="tapiocas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Tapioca Queijo Mussarela">
+                    </div>
+                    <div>
+                        <h3>Tapioca Queijo Mussarela</h3>
+                        <p>Tapioca com queijo mussarela</p>
+                        <p class="preco">R$ 10,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="tapiocas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Tapioca Charque com Queijo Mussarela">
+                    </div>
+                    <div>
+                        <h3>Tapioca Charque com Queijo Mussarela</h3>
+                        <p>Tapioca com charque e queijo mussarela</p>
+                        <p class="preco">R$ 15,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="tapiocas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Tapioca de Coco com Queijo Coalho">
+                    </div>
+                    <div>
+                        <h3>Tapioca de Coco com Queijo Coalho</h3>
+                        <p>Tapioca com coco e queijo coalho</p>
+                        <p class="preco">R$ 7,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="tapiocas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Tapioca Queijo Coalho">
+                    </div>
+                    <div>
+                        <h3>Tapioca Queijo Coalho</h3>
+                        <p>Tapioca com queijo coalho</p>
+                        <p class="preco">R$ 10,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="tapiocas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Tapioca Romeu e Julieta">
+                    </div>
+                    <div>
+                        <h3>Tapioca Romeu e Julieta</h3>
+                        <p>Queijo coalho e goiabada</p>
+                        <p class="preco">R$ 12,99</p>
                     </div>
                 </div>
 
                 <!-- VITAMINAS -->
                 <div class="card" data-category="vitaminas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Vitamina de Banana">
+                        <img src="assets/product_not_found.jpg" alt="Acerola com Leite 340ml">
                     </div>
                     <div>
-                        <h3>Vitamina de Banana</h3>
-                        <p>Vitamina de banana com leite e aveia</p>
-                        <p class="preco">R$ 9,90</p>
+                        <h3>Acerola com Leite 340ml</h3>
+                        <p>Vitamina de acerola com leite</p>
+                        <p class="preco">R$ 8,99</p>
                     </div>
                 </div>
                 
                 <div class="card" data-category="vitaminas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <div>
-                        <img src="assets/arrumadinho de charque.webp" alt="Vitamina de Morango">
+                        <img src="assets/product_not_found.jpg" alt="Goiaba com Leite 340ml">
                     </div>
                     <div>
-                        <h3>Vitamina de Morango</h3>
-                        <p>Vitamina de morango com leite e granola</p>
-                        <p class="preco">R$ 10,90</p>
+                        <h3>Goiaba com Leite 340ml</h3>
+                        <p>Vitamina de goiaba com leite</p>
+                        <p class="preco">R$ 8,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="vitaminas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Cajá com Leite 340ml">
+                    </div>
+                    <div>
+                        <h3>Cajá com Leite 340ml</h3>
+                        <p>Vitamina de cajá com leite</p>
+                        <p class="preco">R$ 8,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="vitaminas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Graviola com Leite 340ml">
+                    </div>
+                    <div>
+                        <h3>Graviola com Leite 340ml</h3>
+                        <p>Vitamina de graviola com leite</p>
+                        <p class="preco">R$ 8,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="vitaminas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Cajú com Leite 340ml">
+                    </div>
+                    <div>
+                        <h3>Cajú com Leite 340ml</h3>
+                        <p>Vitamina de cajú com leite</p>
+                        <p class="preco">R$ 8,99</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="vitaminas">
+                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div>
+                        <img src="assets/product_not_found.jpg" alt="Morango com Leite 340ml">
+                    </div>
+                    <div>
+                        <h3>Morango com Leite 340ml</h3>
+                        <p>Vitamina de morango com leite</p>
+                        <p class="preco">R$ 8,99</p>
                     </div>
                 </div>
 
             </div>
         </section>
     </main>
-
+    <footer>
+        <p>&copy; 2024 Torres Coffee. Todos os direitos reservados.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
-
 </html>
