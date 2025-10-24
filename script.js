@@ -271,6 +271,9 @@ function filterCards(category) {
         cards = document.querySelectorAll('.card');
     }
     
+    // Limpa mensagens de pesquisa quando filtra por categoria
+    clearSearchMessages();
+    
     const container = document.querySelector('.produtos-container');
     const visibleCards = [];
     
@@ -356,6 +359,9 @@ function performSearch(searchTerm) {
     if (searchTerm === '') {
         // Se não há termo de busca, volta ao filtro atual
         filterCards(currentCategory);
+        
+        // Remove mensagens de pesquisa
+        clearSearchMessages();
         return;
     }
     
@@ -395,6 +401,20 @@ function performSearch(searchTerm) {
     
     // Atualiza contador de resultados
     updateSearchCounter(foundCount, searchTerm);
+}
+
+function clearSearchMessages() {
+    // Remove mensagem de "não encontrado"
+    const existingMessage = document.querySelector('.search-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    // Remove contador de resultados
+    const existingCounter = document.querySelector('.search-counter');
+    if (existingCounter) {
+        existingCounter.remove();
+    }
 }
 
 function showSearchResults(count, searchTerm) {
@@ -634,6 +654,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setupCardInteractions();
     setupFavoriteSystem();
     
+    // Carrega produtos salvos do localStorage
+    loadProductsFromStorage();
+    
     // Força a reordenação inicial
     setTimeout(() => {
         filterByCategory('todos');
@@ -861,4 +884,539 @@ window.addEventListener('resize', () => {
     }, 250);
 });
 
-console.log('Torres Coffee - Sistema de Navegação Horizontal implementado! ☕🌿✨');
+// Sistema Administrativo
+let isAdminLoggedIn = false;
+let products = [];
+let currentEditingProduct = null;
+
+// Credenciais administrativas (em produção, isso deveria estar em um servidor)
+const ADMIN_CREDENTIALS = {
+    username: 'admin',
+    password: 'torres123'
+};
+
+// Chave para localStorage
+const STORAGE_KEY = 'torres_coffee_products';
+
+// Funções de persistência
+function saveProductsToStorage() {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
+        console.log('Produtos salvos no localStorage:', products.length);
+    } catch (error) {
+        console.error('Erro ao salvar produtos:', error);
+        showToast('Erro ao salvar produtos!', 'error');
+    }
+}
+
+function loadProductsFromStorage() {
+    try {
+        const savedProducts = localStorage.getItem(STORAGE_KEY);
+        if (savedProducts) {
+            products = JSON.parse(savedProducts);
+            console.log('Produtos carregados do localStorage:', products.length);
+            
+            // Só renderiza produtos salvos se não houver produtos no DOM
+            const existingCards = document.querySelectorAll('.card');
+            if (existingCards.length === 0) {
+                renderSavedProductsToDOM();
+            }
+            return true;
+        }
+    } catch (error) {
+        console.error('Erro ao carregar produtos:', error);
+        showToast('Erro ao carregar produtos salvos!', 'error');
+    }
+    return false;
+}
+
+function renderSavedProductsToDOM() {
+    const container = document.querySelector('.produtos-container');
+    if (!container) return;
+    
+    // Adiciona produtos salvos que não estão no DOM
+    products.forEach(product => {
+        // Verifica se o produto já existe no DOM
+        const existingCards = container.querySelectorAll('.card');
+        let productExists = false;
+        
+        existingCards.forEach(card => {
+            const cardName = card.querySelector('h3').textContent;
+            if (cardName === product.name) {
+                productExists = true;
+            }
+        });
+        
+        if (!productExists) {
+            const newCard = document.createElement('div');
+            newCard.className = 'card';
+            newCard.setAttribute('data-category', product.category);
+            
+            newCard.innerHTML = `
+                <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div>
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div>
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <p class="preco">R$ ${product.price}</p>
+                </div>
+            `;
+            
+            container.appendChild(newCard);
+        }
+    });
+    
+    // Atualiza a variável cards
+    cards = document.querySelectorAll('.card');
+}
+
+// Elementos do sistema administrativo
+const adminLoginBtn = document.getElementById('adminLoginBtn');
+const adminLoginModal = document.getElementById('adminLoginModal');
+const adminPanelModal = document.getElementById('adminPanelModal');
+const adminLoginForm = document.getElementById('adminLoginForm');
+const logoutBtn = document.getElementById('logoutBtn');
+const cancelLogin = document.getElementById('cancelLogin');
+const adminProductsList = document.getElementById('adminProductsList');
+const addProductForm = document.getElementById('addProductForm');
+const productImage = document.getElementById('productImage');
+const imagePreview = document.getElementById('imagePreview');
+
+// Event Listeners para sistema administrativo
+adminLoginBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeMenu(); // Fecha o menu lateral
+    openAdminLogin();
+});
+cancelLogin.addEventListener('click', closeAdminLogin);
+logoutBtn.addEventListener('click', logout);
+adminLoginForm.addEventListener('submit', handleAdminLogin);
+
+// Event Listeners para tabs
+document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        switchTab(e.target.dataset.tab);
+    });
+});
+
+// Event Listeners para formulário de produto
+addProductForm.addEventListener('submit', handleAddProduct);
+productImage.addEventListener('change', handleImagePreview);
+
+// Event Listeners para controles administrativos
+document.getElementById('adminSearch').addEventListener('input', filterAdminProducts);
+document.getElementById('categoryFilter').addEventListener('change', filterAdminProducts);
+
+// Funções do sistema administrativo
+function openAdminLogin() {
+    adminLoginModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeAdminLogin() {
+    adminLoginModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function handleAdminLogin(e) {
+    e.preventDefault();
+    const username = document.getElementById('adminUsername').value;
+    const password = document.getElementById('adminPassword').value;
+    
+    if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+        isAdminLoggedIn = true;
+        updateAdminMenuState();
+        closeAdminLogin();
+        openAdminPanel();
+        showToast('Login realizado com sucesso!');
+    } else {
+        showToast('Credenciais inválidas!', 'error');
+    }
+}
+
+function openAdminPanel() {
+    adminPanelModal.style.display = 'flex';
+    // Não bloqueia o overflow do body para permitir rolagem no modal
+    loadProducts();
+}
+
+function closeAdminPanel() {
+    adminPanelModal.style.display = 'none';
+    // Restaura o overflow do body
+    document.body.style.overflow = 'auto';
+}
+
+function logout() {
+    isAdminLoggedIn = false;
+    updateAdminMenuState();
+    closeAdminPanel();
+    showToast('Logout realizado com sucesso!');
+}
+
+function updateAdminMenuState() {
+    const adminMenuItem = document.querySelector('.admin-menu-item');
+    if (isAdminLoggedIn) {
+        adminMenuItem.classList.add('logged-in');
+    } else {
+        adminMenuItem.classList.remove('logged-in');
+    }
+}
+
+function switchTab(tabName) {
+    // Remove active class de todas as tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
+    
+    // Adiciona active class na tab selecionada
+    document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+    document.getElementById(`${tabName}-tab`).style.display = 'block';
+    
+    if (tabName === 'products') {
+        loadProducts();
+    }
+}
+
+function loadProducts() {
+    // Primeiro tenta carregar produtos salvos
+    const hasSavedProducts = loadProductsFromStorage();
+    
+    if (!hasSavedProducts) {
+        // Se não há produtos salvos, carrega produtos existentes do DOM
+        products = [];
+        const cards = document.querySelectorAll('.card');
+        
+        cards.forEach((card, index) => {
+            const product = {
+                id: Date.now() + index,
+                name: card.querySelector('h3').textContent,
+                description: card.querySelector('p:first-of-type').textContent,
+                price: card.querySelector('.preco').textContent.replace('R$ ', '').replace(',', '.'),
+                category: card.getAttribute('data-category') || 'geral',
+                image: card.querySelector('img').src,
+                element: card
+            };
+            products.push(product);
+        });
+        
+        // Salva os produtos iniciais
+        saveProductsToStorage();
+    }
+    
+    renderAdminProducts();
+}
+
+function renderAdminProducts() {
+    adminProductsList.innerHTML = '';
+    
+    products.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.className = 'admin-product-card';
+        productCard.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <p class="price">R$ ${product.price}</p>
+            <div class="admin-product-actions">
+                <button class="edit-btn" onclick="editProduct(${product.id})">Editar</button>
+                <button class="delete-btn" onclick="deleteProduct(${product.id})">Excluir</button>
+            </div>
+        `;
+        adminProductsList.appendChild(productCard);
+    });
+}
+
+function filterAdminProducts() {
+    const searchTerm = document.getElementById('adminSearch').value.toLowerCase();
+    const categoryFilter = document.getElementById('categoryFilter').value;
+    
+    const filteredProducts = products.filter(product => {
+        const matchesSearch = product.name.toLowerCase().includes(searchTerm) || 
+                            product.description.toLowerCase().includes(searchTerm);
+        const matchesCategory = !categoryFilter || product.category === categoryFilter;
+        return matchesSearch && matchesCategory;
+    });
+    
+    // Atualiza a lista com produtos filtrados
+    adminProductsList.innerHTML = '';
+    filteredProducts.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.className = 'admin-product-card';
+        productCard.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <p class="price">R$ ${product.price}</p>
+            <div class="admin-product-actions">
+                <button class="edit-btn" onclick="editProduct(${product.id})">Editar</button>
+                <button class="delete-btn" onclick="deleteProduct(${product.id})">Excluir</button>
+            </div>
+        `;
+        adminProductsList.appendChild(productCard);
+    });
+}
+
+function editProduct(productId) {
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+    
+    currentEditingProduct = product;
+    
+    // Preenche o formulário com dados do produto
+    document.getElementById('productName').value = product.name;
+    document.getElementById('productCategory').value = product.category;
+    document.getElementById('productDescription').value = product.description;
+    document.getElementById('productPrice').value = product.price;
+    
+    // Muda para a tab de adicionar produto
+    switchTab('add-product');
+    
+    // Altera o título do formulário
+    const formTitle = document.querySelector('#add-product-tab h2');
+    if (formTitle) {
+        formTitle.textContent = 'Editar Produto';
+    }
+    
+    showToast('Produto carregado para edição');
+}
+
+function deleteProduct(productId) {
+    if (!confirm('Tem certeza que deseja excluir este produto?')) return;
+    
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+    
+    // Remove do DOM
+    product.element.remove();
+    
+    // Remove da lista
+    products = products.filter(p => p.id !== productId);
+    
+    // Salva no localStorage
+    saveProductsToStorage();
+    
+    showToast('Produto excluído com sucesso!');
+    renderAdminProducts();
+}
+
+function handleAddProduct(e) {
+    e.preventDefault();
+    console.log('Formulário de produto submetido');
+    
+    const formData = new FormData(addProductForm);
+    const productData = {
+        name: formData.get('name'),
+        category: formData.get('category'),
+        description: formData.get('description'),
+        price: formData.get('price'),
+        image: productImage.files[0]
+    };
+    
+    console.log('Dados do produto:', productData);
+    
+    // Validação básica
+    if (!productData.name || !productData.description || !productData.price) {
+        showToast('Por favor, preencha todos os campos obrigatórios!', 'error');
+        return;
+    }
+    
+    if (currentEditingProduct) {
+        // Editando produto existente
+        console.log('Editando produto existente:', currentEditingProduct.id);
+        updateProduct(currentEditingProduct.id, productData);
+    } else {
+        // Adicionando novo produto
+        console.log('Adicionando novo produto');
+        addNewProduct(productData);
+    }
+}
+
+function addNewProduct(productData) {
+    console.log('Adicionando novo produto:', productData);
+    
+    // Cria novo elemento de produto
+    const newCard = document.createElement('div');
+    newCard.className = 'card';
+    newCard.setAttribute('data-category', productData.category);
+    
+    // Processa imagem
+    let imageSrc = 'assets/product_not_found.jpg';
+    if (productData.image) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            imageSrc = e.target.result;
+            updateProductImage(newCard, imageSrc);
+        };
+        reader.readAsDataURL(productData.image);
+    }
+    
+    newCard.innerHTML = `
+        <button class="favorite-btn" aria-label="Adicionar aos favoritos">
+            <i class="far fa-heart"></i>
+        </button>
+        <div>
+            <img src="${imageSrc}" alt="${productData.name}">
+        </div>
+        <div>
+            <h3>${productData.name}</h3>
+            <p>${productData.description}</p>
+            <p class="preco">R$ ${productData.price}</p>
+        </div>
+    `;
+    
+    // Adiciona ao DOM
+    const container = document.querySelector('.produtos-container');
+    if (!container) {
+        console.error('Container .produtos-container não encontrado!');
+        showToast('Erro: Container não encontrado!', 'error');
+        return;
+    }
+    
+    container.appendChild(newCard);
+    console.log('Produto adicionado ao DOM');
+    
+    // Adiciona à lista de produtos
+    const newProduct = {
+        id: Date.now() + Math.random(),
+        name: productData.name,
+        description: productData.description,
+        price: productData.price,
+        category: productData.category,
+        image: imageSrc,
+        element: newCard
+    };
+    products.push(newProduct);
+    console.log('Produto adicionado à lista. Total:', products.length);
+    
+    // Salva no localStorage
+    saveProductsToStorage();
+    
+    showToast('Produto adicionado com sucesso!');
+    switchTab('products');
+    addProductForm.reset();
+    imagePreview.innerHTML = '';
+}
+
+function updateProduct(productId, productData) {
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+    
+    // Atualiza dados do produto
+    product.name = productData.name;
+    product.description = productData.description;
+    product.price = productData.price;
+    product.category = productData.category;
+    
+    // Atualiza no DOM
+    const card = product.element;
+    card.setAttribute('data-category', productData.category);
+    card.querySelector('h3').textContent = productData.name;
+    card.querySelector('p:first-of-type').textContent = productData.description;
+    card.querySelector('.preco').textContent = `R$ ${productData.price}`;
+    
+    // Atualiza imagem se fornecida
+    if (productData.image) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            product.image = e.target.result;
+            updateProductImage(card, e.target.result);
+        };
+        reader.readAsDataURL(productData.image);
+    }
+    
+    // Salva no localStorage
+    saveProductsToStorage();
+    
+    showToast('Produto atualizado com sucesso!');
+    switchTab('products');
+    addProductForm.reset();
+    imagePreview.innerHTML = '';
+    currentEditingProduct = null;
+}
+
+function updateProductImage(card, imageSrc) {
+    const img = card.querySelector('img');
+    if (img) {
+        img.src = imageSrc;
+    }
+}
+
+function handleImagePreview(e) {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            imagePreview.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+// Fechar modais ao clicar fora
+adminLoginModal.addEventListener('click', (e) => {
+    if (e.target === adminLoginModal) {
+        closeAdminLogin();
+    }
+});
+
+adminPanelModal.addEventListener('click', (e) => {
+    if (e.target === adminPanelModal) {
+        closeAdminPanel();
+    }
+});
+
+// Fechar modais com ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        if (adminLoginModal.style.display === 'flex') {
+            closeAdminLogin();
+        }
+        if (adminPanelModal.style.display === 'flex') {
+            closeAdminPanel();
+        }
+    }
+});
+
+// Função para mostrar toast com tipo
+function showToast(message, type = 'success') {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = message;
+    
+    const bgColor = type === 'error' ? '#f44336' : 'linear-gradient(135deg, #1B5E20, #2E7D32)';
+    
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: ${bgColor};
+        color: white;
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 600;
+        z-index: 3000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    `;
+    
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.style.opacity = '1';
+    }, 10);
+    
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
+    }, 2000);
+}
+
+console.log('Torres Coffee - Sistema Administrativo implementado! ☕🌿✨');
