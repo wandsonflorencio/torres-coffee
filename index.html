@@ -33,9 +33,6 @@
             
         </button>
         <input placeholder="🔍 Pesquisar produtos..." type="search" aria-label="Pesquisar produtos">
-        <div class="favorite-counter" id="favoriteCounter">
-            <i class="fas fa-heart"></i> <span id="favoriteCount">0</span>
-        </div>
     </header>
     
     <nav class="menu-lateral" role="navigation" aria-label="Menu principal">
@@ -67,6 +64,9 @@
         
 
         <div class="modal" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
+            <button class="modal-close-btn" id="closeModalBtn" aria-label="Fechar modal de horários">
+                <i class="fas fa-times"></i>
+            </button>
             <img src="assets/logo.png" alt="Logo Torres Coffee">
             <h1 id="modal-title">Torres Coffee</h1>
             <h2 id="modal-description">HORÁRIOS DE FUNCIONAMENTO</h2>
@@ -226,9 +226,6 @@
                 
                 <!-- ALMOÇOS -->
                 <div class="card" data-category="almoco" data-order="1">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/arrumadinho de charque.webp" alt="Arrumadinho de Charque">
                     </div>
@@ -240,9 +237,6 @@
                 </div>
                 
                 <div class="card" data-category="almoco" data-order="2">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/b8435349-e413-4cb8-b69f-80682987c477_20250724103212.webp" alt="Estrogonofe de Frango">
                     </div>
@@ -254,9 +248,6 @@
                 </div>
                 
                 <div class="card" data-category="almoco" data-order="3">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Peixe no Coco">
                     </div>
@@ -268,9 +259,6 @@
                 </div>
                 
                 <div class="card" data-category="almoco" data-order="4">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/fefaa118-2d45-443a-a9ff-65033132b796_20250724103211.webp" alt="Bife ao Molho">
                     </div>
@@ -282,9 +270,6 @@
                 </div>
                 
                 <div class="card" data-category="almoco" data-order="5">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/d8812dd5-bf59-4ae1-b244-839deb0b2eb4_20250724103212.webp" alt="Lasanha de Carne">
                     </div>
@@ -296,9 +281,6 @@
                 </div>
                 
                 <div class="card" data-category="almoco" data-order="6">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/8bcc8e83-266e-4d8d-81ea-2a28f73d8677_20250724103213.webp" alt="Peixe Tilápia">
                     </div>
@@ -310,9 +292,6 @@
                 </div>
                 
                 <div class="card" data-category="almoco" data-order="7">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/58049ac7-3973-4c25-b636-9c8af1dc2bd5_20250724103212.webp" alt="Escondidinho de Charque">
                     </div>
@@ -324,9 +303,6 @@
                 </div>
                 
                 <div class="card" data-category="almoco" data-order="8">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/40254a48-2ed5-46ee-ad81-6f7f81e9e75e_20250724103213 (1).webp" alt="Macarronada com Almôndegas Artesanais">
                     </div>
@@ -338,9 +314,6 @@
                 </div>
                 
                 <div class="card" data-category="almoco" data-order="9">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Xerém com Galinha">
                     </div>
@@ -353,9 +326,6 @@
 
                 <!-- BEBIDAS -->
                 <div class="card" data-category="bebidas" data-order="10">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/377a98f9-eaba-4e3e-8454-cc2035ce3951_20250724103213.webp" alt="Água Mineral 500ml">
                     </div>
@@ -367,9 +337,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas" data-order="11">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/181a10fe-6451-4c9d-b035-11bfbe8bbaf0_20250724103214.webp" alt="Chocolate Quente 180ml">
                     </div>
@@ -381,9 +348,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas" data-order="12">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/9270a166-137b-459f-a420-5dabc233f7d4_20250724103215.webp" alt="Coca Cola KS 290ml">
                     </div>
@@ -395,9 +359,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas" data-order="14">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Del Valle Lata 290ml">
                     </div>
@@ -409,9 +370,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas" data-order="15">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/9ebec885-a546-42bb-992c-43d107523318_20250724103220.webp" alt="Fanta Laranja 350ml">
                     </div>
@@ -423,9 +381,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas" data-order="16">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/86e0176c-68cc-4d30-94d6-00b8f8292ea3_20250724103217.webp" alt="Pepsi 350ml">
                     </div>
@@ -437,9 +392,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas" data-order="17">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/10c49c7d-6641-4881-a196-3d098a3a1c0c_20250724103214.webp" alt="Água Mineral com Gás 500ml">
                     </div>
@@ -451,9 +403,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas" data-order="18">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/e2fd328b-6bf6-4fc0-b05e-7a41a6979cfa_20250724103214.webp" alt="Chocolate Quente com Chantilly 180ml">
                     </div>
@@ -465,9 +414,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas" data-order="19">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Coca Lata 220ml">
                     </div>
@@ -479,9 +425,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/7cfd33ba-6492-4aab-97b7-5fff093b8d6e_20250724103215.webp" alt="Energético">
                     </div>
@@ -493,9 +436,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/9e895a63-11fe-4b59-b5fa-751d1ff52bca_20250724103216.webp" alt="Guaraná Antarctica 350ml">
                     </div>
@@ -507,9 +447,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/07a4b686-5315-44ce-b204-5a7f1c2cc489_20250724103217.webp" alt="Pepsi Black 350ml">
                     </div>
@@ -521,9 +458,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/0e51f639-7024-4e7f-8c5c-67c0bae0621c_20250724103214.webp" alt="Chá">
                     </div>
@@ -535,9 +469,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/412b51e8-2822-49e7-9a73-d04f429ac74f_20250724103215.webp" alt="Coca Cola 350ml">
                     </div>
@@ -549,9 +480,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/e72de72c-1ec3-4cc7-bb05-1a89697224f1_20250724103215.webp" alt="Coca-Cola Zero 350ml">
                     </div>
@@ -563,9 +491,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/7cfd33ba-6492-4aab-97b7-5fff093b8d6e_20250724103215.webp" alt="Energético">
                     </div>
@@ -577,9 +502,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/5885361c-d844-4e90-aed1-62ceed79d8ad_20250724103216.webp" alt="H2O 500ml">
                     </div>
@@ -591,9 +513,6 @@
                 </div>
                 
                 <div class="card" data-category="bebidas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/f1f645bf-1f0c-469b-b68b-1740e095bf4f_20250724103217.webp" alt="Schweppes Citrus">
                     </div>
@@ -606,9 +525,6 @@
 
                 <!-- CAFÉS -->
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Café Mel de Uruçu 130ml">
                     </div>
@@ -620,9 +536,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/08de5b4f-e32c-4d8e-8220-75cc48e83bc2_20250724103218.webp" alt="Cappuccino Chantilly">
                     </div>
@@ -634,9 +547,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/b7a2fe72-1f66-427b-9cbe-c4eb068360d3_20250724103218.webp" alt="Coado com Leite 180ml">
                     </div>
@@ -648,9 +558,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/21f03293-709b-4343-86dd-354e235ae902_20250724103219.webp" alt="Expresso 180ml">
                     </div>
@@ -662,9 +569,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/adbd6cf1-a8fb-4d6c-822a-a34c5d8b6919_20250724103220.webp" alt="Frapê de Nutella">
                     </div>
@@ -676,9 +580,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/e0e90f1f-e2fe-468e-802e-66550d2a99ca_20250724103221.webp" alt="Leite com Nescau e Chantilly">
                     </div>
@@ -690,9 +591,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Canelinha 180ml">
                     </div>
@@ -704,9 +602,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/13397d06-4ffd-4b2b-b107-1b1b47c2bbda_20250724103218.webp" alt="Coado 180ml">
                     </div>
@@ -718,9 +613,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/13397d06-4ffd-4b2b-b107-1b1b47c2bbda_20250724103218.webp" alt="Descafeinado 180ml">
                     </div>
@@ -732,9 +624,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/21f03293-709b-4343-86dd-354e235ae902_20250724103219.webp" alt="Expresso 50ml">
                     </div>
@@ -746,9 +635,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/9ebec885-a546-42bb-992c-43d107523318_20250724103220.webp" alt="Late Gelado Baunilha">
                     </div>
@@ -760,9 +646,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/7f98f6e3-e137-4ef4-9002-4953466b987a_20250724103221.webp" alt="Moka 180ml">
                     </div>
@@ -774,9 +657,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Cappuccino 180ml">
                     </div>
@@ -788,9 +668,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/13397d06-4ffd-4b2b-b107-1b1b47c2bbda_20250724103218.webp" alt="Coado 50ml">
                     </div>
@@ -802,9 +679,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/6ffd239d-ab3f-44ac-a7e9-52c5375d3f98_20250724103219.webp" alt="Espumone 180ml">
                     </div>
@@ -816,9 +690,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/adbd6cf1-a8fb-4d6c-822a-a34c5d8b6919_20250724103220.webp" alt="Frapê de Banoffee">
                     </div>
@@ -830,9 +701,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/9ebec885-a546-42bb-992c-43d107523318_20250724103220.webp" alt="Late Gelado Chocolate">
                     </div>
@@ -844,9 +712,6 @@
                 </div>
                 
                 <div class="card" data-category="cafes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/f242f4dc-8bba-4114-9a60-c036fb890fb1_20250724103222.webp" alt="Orange Coffee">
                     </div>
@@ -859,9 +724,6 @@
 
                 <!-- CONVENIÊNCIA -->
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Bala Café">
                     </div>
@@ -873,9 +735,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Chiclete">
                     </div>
@@ -887,9 +746,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Diamante Negro">
                     </div>
@@ -901,9 +757,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="M&M">
                     </div>
@@ -915,9 +768,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Ouro Branco">
                     </div>
@@ -929,9 +779,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Sonho de Valsa">
                     </div>
@@ -943,9 +790,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Trident Max">
                     </div>
@@ -957,9 +801,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Batom Garoto">
                     </div>
@@ -971,9 +812,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Chocolate Talento">
                     </div>
@@ -985,9 +823,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Halls Pastilha">
                     </div>
@@ -999,9 +834,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Mentos Pastilha">
                     </div>
@@ -1013,9 +845,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Prestigio">
                     </div>
@@ -1027,9 +856,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Trento Massino Dark">
                     </div>
@@ -1041,9 +867,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Twix">
                     </div>
@@ -1055,9 +878,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Bis Xtra">
                     </div>
@@ -1069,9 +889,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Chokito">
                     </div>
@@ -1083,9 +900,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Kit Kat">
                     </div>
@@ -1097,9 +911,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Mentos Pure">
                     </div>
@@ -1111,9 +922,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Snickers">
                     </div>
@@ -1125,9 +933,6 @@
                 </div>
                 
                 <div class="card" data-category="conveniencia">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Trident">
                     </div>
@@ -1140,9 +945,6 @@
 
                 <!-- CROISSANTS -->
                 <div class="card" data-category="croissants">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/3eda28c4-76d1-4dbb-9fd6-3c855f40d1c8_20250724103222.webp" alt="Croissant">
                     </div>
@@ -1155,9 +957,6 @@
                 
                 <!-- CUSCUZ RECHEADO -->
                 <div class="card" data-category="cuscuz">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/b64959d9-28eb-49b6-bcfb-6ce73dc3884f_20250724103222 (1).webp" alt="Cuscuz Calabresa">
                     </div>
@@ -1169,9 +968,6 @@
                 </div>
 
                 <div class="card" data-category="cuscuz">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/b64959d9-28eb-49b6-bcfb-6ce73dc3884f_20250724103222 (1).webp" alt="Cuscuz Misto">
                     </div>
@@ -1183,9 +979,6 @@
                 </div>
                 
                 <div class="card" data-category="cuscuz">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/bed407e0-a4d7-4b96-be6e-59b462845435_20250724103223.webp" alt="Cuscuz Recheado Frango com Bacon">
                     </div>
@@ -1197,9 +990,6 @@
                 </div>
                 
                 <div class="card" data-category="cuscuz">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/b64959d9-28eb-49b6-bcfb-6ce73dc3884f_20250724103222 (1).webp" alt="Cuscuz Charque com Queijo">
                     </div>
@@ -1211,9 +1001,6 @@
                 </div>
                 
                 <div class="card" data-category="cuscuz">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/119a5fc2-3cd9-41cd-ae9d-4d61e699b5d0_20250724103223.webp" alt="Cuscuz Queijo">
                     </div>
@@ -1225,9 +1012,6 @@
                 </div>
                 
                 <div class="card" data-category="cuscuz">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/bed407e0-a4d7-4b96-be6e-59b462845435_20250724103223.webp" alt="Cuscuz Frango com Queijo">
                     </div>
@@ -1239,9 +1023,6 @@
                 </div>
                 
                 <div class="card" data-category="cuscuz">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/b64959d9-28eb-49b6-bcfb-6ce73dc3884f_20250724103222 (1).webp" alt="Cuscuz Recheado Carne de Sol com Queijo Coalho">
                     </div>
@@ -1254,9 +1035,6 @@
 
                 <!-- JANTAS -->
                 <div class="card" data-category="jantas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/61dc3684-fc53-4e77-92f9-316660e78fac_20250724103224.webp" alt="Caldo Verde">
                     </div>
@@ -1268,9 +1046,6 @@
                 </div>
                 
                 <div class="card" data-category="jantas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/sopa.webp" alt="Sopa de Carne">
                     </div>
@@ -1283,9 +1058,6 @@
 
                 <!-- OMELETES -->
                 <div class="card" data-category="omeletes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/33ed4369-2564-4841-8fff-90604591434b_20250724103225.webp" alt="Omelete de Frango">
                     </div>
@@ -1297,9 +1069,6 @@
                 </div>
                 
                 <div class="card" data-category="omeletes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/5975d338-267b-401c-a1e6-b5f53df9f787_20250724103226.webp" alt="Omelete Frango com Bacon">
                     </div>
@@ -1311,9 +1080,6 @@
                 </div>
                 
                 <div class="card" data-category="omeletes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/03a93aac-4314-4b1f-ae3e-a59347aed992_20250724103225.webp" alt="Omelete de Presunto">
                     </div>
@@ -1325,9 +1091,6 @@
                 </div>
                 
                 <div class="card" data-category="omeletes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/6dc78214-4f4c-4b72-8225-77159f2f8b13_20250724103226.webp" alt="Omelete Simples">
                     </div>
@@ -1339,9 +1102,6 @@
                 </div>
                 
                 <div class="card" data-category="omeletes">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/eb7a4cda-9d76-40b8-8520-570318507571_20250724103225.webp" alt="Omelete de Queijo">
                     </div>
@@ -1354,9 +1114,6 @@
 
                 <!-- PAMONHAS -->
                 <div class="card" data-category="pamonhas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/05a0232c-b4b2-49cf-b477-60937173073e_20250724103226.webp" alt="Pamonha com Manteiga">
                     </div>
@@ -1368,9 +1125,6 @@
                 </div>
                 
                 <div class="card" data-category="pamonhas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/05a0232c-b4b2-49cf-b477-60937173073e_20250724103226.webp" alt="Pamonha com Queijo Coalho">
                     </div>
@@ -1383,9 +1137,6 @@
 
                 <!-- SALGADOS -->
                 <div class="card" data-category="salgados">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/d8655fb6-2014-461b-abf7-42971bf08b94_20250724103227.webp" alt="Coxinha de Frango">
                     </div>
@@ -1397,9 +1148,6 @@
                 </div>
                 
                 <div class="card" data-category="salgados">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/2a233663-ce24-43e1-bf9e-a71d4f8ecf27_20250724103227.webp" alt="Empada de Frango">
                     </div>
@@ -1411,9 +1159,6 @@
                 </div>
                 
                 <div class="card" data-category="salgados">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Pastel de Forno">
                     </div>
@@ -1425,9 +1170,6 @@
                 </div>
                 
                 <div class="card" data-category="salgados">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Pote de Biscoito">
                     </div>
@@ -1439,9 +1181,6 @@
                 </div>
                 
                 <div class="card" data-category="salgados">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/a2f8fbb9-7ec7-44cb-ab78-a8a844e2c4f9_20250724103228.webp" alt="Quiche">
                     </div>
@@ -1453,9 +1192,6 @@
                 </div>
                 
                 <div class="card" data-category="salgados">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/5b231aa6-e3b7-4d2a-bb74-77c1381541f7_20250724103227.webp" alt="Folhado Misto ou Frango">
                     </div>
@@ -1467,9 +1203,6 @@
                 </div>
                 
                 <div class="card" data-category="salgados">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Pote de Cookies">
                     </div>
@@ -1482,9 +1215,6 @@
 
                 <!-- SANDUÍCHES -->
                 <div class="card" data-category="sanduiches">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/ce8de6f4-7973-4ca2-ad26-071b392f7a33_20250724103228.webp" alt="Bauru">
                     </div>
@@ -1496,9 +1226,6 @@
                 </div>
                 
                 <div class="card" data-category="sanduiches">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Pão Francês com Ovo">
                     </div>
@@ -1510,9 +1237,6 @@
                 </div>
                 
                 <div class="card" data-category="sanduiches">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Pão Francês Misto">
                     </div>
@@ -1524,9 +1248,6 @@
                 </div>
                 
                 <div class="card" data-category="sanduiches">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Pão Francês com Manteiga na Chapa">
                     </div>
@@ -1538,9 +1259,6 @@
                 </div>
                 
                 <div class="card" data-category="sanduiches">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Pão Francês com Queijo Coalho na Chapa">
                     </div>
@@ -1552,9 +1270,6 @@
                 </div>
                 
                 <div class="card" data-category="sanduiches">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Pão Francês com Mortadela na Chapa">
                     </div>
@@ -1566,9 +1281,6 @@
                 </div>
                 
                 <div class="card" data-category="sanduiches">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Pão Francês com Queijo do Reino na Chapa">
                     </div>
@@ -1581,9 +1293,6 @@
 
                 <!-- SOBREMESAS -->
                 <div class="card" data-category="sobremesas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/7c3fc86f-36d9-44a5-a187-56236ff16dfe_20250724103229.webp" alt="Banoffee">
                     </div>
@@ -1595,9 +1304,6 @@
                 </div>
                 
                 <div class="card" data-category="sobremesas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/e56e304e-73ec-4bfb-bc66-71048defc391_20250806102035.webp" alt="Bombom de Morango com Pistache">
                     </div>
@@ -1609,9 +1315,6 @@
                 </div>
                 
                 <div class="card" data-category="sobremesas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/ed6ea264-3c34-4a08-bb62-5847f8a49f8c_20250724103229.webp" alt="Brownie Plus">
                     </div>
@@ -1623,9 +1326,6 @@
                 </div>
                 
                 <div class="card" data-category="sobremesas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Ovos de Páscoa 350g">
                     </div>
@@ -1637,9 +1337,6 @@
                 </div>
                 
                 <div class="card" data-category="sobremesas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/8c650094-20d8-4f90-9716-dce75c35fc5a_20250724103229.webp" alt="Bolo Simples">
                     </div>
@@ -1651,9 +1348,6 @@
                 </div>
                 
                 <div class="card" data-category="sobremesas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Brigadeiro de Café">
                     </div>
@@ -1665,9 +1359,6 @@
                 </div>
                 
                 <div class="card" data-category="sobremesas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Copo da Felicidade">
                     </div>
@@ -1679,9 +1370,6 @@
                 </div>
                 
                 <div class="card" data-category="sobremesas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/43cea997-76c8-4554-a0a8-9110342ac22b_20250724103230.webp" alt="Pudim de Leite Condensado Fatia">
                     </div>
@@ -1693,9 +1381,6 @@
                 </div>
                 
                 <div class="card" data-category="sobremesas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/deb3ea3f-f373-42df-ad00-0c92dd34a880_20250804102110.webp" alt="Bombom de Morango">
                     </div>
@@ -1707,9 +1392,6 @@
                 </div>
                 
                 <div class="card" data-category="sobremesas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Brownie">
                     </div>
@@ -1721,9 +1403,6 @@
                 </div>
                 
                 <div class="card" data-category="sobremesas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Docinhos">
                     </div>
@@ -1735,9 +1414,6 @@
                 </div>
                 
                 <div class="card" data-category="sobremesas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/5e1aeaf2-c0ec-4e3b-bf7f-ee74822a19cf_20250724103230.webp" alt="Tortas Finas">
                     </div>
@@ -1750,9 +1426,6 @@
 
                 <!-- SUCOS -->
                 <div class="card" data-category="sucos">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/f788e9d0-1ecd-4487-b731-f3ca2085fb1b_20250724103232.webp" alt="Abacaxi 340ml">
                     </div>
@@ -1764,9 +1437,6 @@
                 </div>
                 
                 <div class="card" data-category="sucos">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/141e8c55-80a4-48fd-bed1-286f29451eb9_20250724103231.webp" alt="Goiaba 340ml">
                     </div>
@@ -1778,9 +1448,6 @@
                 </div>
                 
                 <div class="card" data-category="sucos">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/beae88cd-536a-4520-9340-9720bf8afe34_20250724103230.webp" alt="Limão 340ml">
                     </div>
@@ -1792,9 +1459,6 @@
                 </div>
                 
                 <div class="card" data-category="sucos">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/90235394-9549-4c86-9474-ce7676913dc6_20250724103232.webp" alt="Cajá 340ml">
                     </div>
@@ -1806,9 +1470,6 @@
                 </div>
                 
                 <div class="card" data-category="sucos">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/ee5a9e5c-26d7-4382-a6a0-87620567ed75_20250724103232.webp" alt="Graviola 340ml">
                     </div>
@@ -1820,9 +1481,6 @@
                 </div>
                 
                 <div class="card" data-category="sucos">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/90235394-9549-4c86-9474-ce7676913dc6_20250724103232.webp" alt="Maracujá 340ml">
                     </div>
@@ -1834,9 +1492,6 @@
                 </div>
                 
                 <div class="card" data-category="sucos">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/90235394-9549-4c86-9474-ce7676913dc6_20250724103232.webp" alt="Caju 340ml">
                     </div>
@@ -1848,9 +1503,6 @@
                 </div>
                 
                 <div class="card" data-category="sucos">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/90235394-9549-4c86-9474-ce7676913dc6_20250724103232.webp" alt="Laranja 340ml">
                     </div>
@@ -1862,9 +1514,6 @@
                 </div>
                 
                 <div class="card" data-category="sucos">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/ce0ffc88-a8e8-4231-9e5f-3f7039b082b4_20250724103233.webp" alt="Morango 340ml">
                     </div>
@@ -1877,9 +1526,6 @@
 
                 <!-- TAPIOCAS -->
                 <div class="card" data-category="tapiocas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Tapioca Carne de Sol com Queijo">
                     </div>
@@ -1891,9 +1537,6 @@
                 </div>
                 
                 <div class="card" data-category="tapiocas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Tapioca Coco">
                     </div>
@@ -1905,9 +1548,6 @@
                 </div>
                 
                 <div class="card" data-category="tapiocas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Tapioca Frango">
                     </div>
@@ -1919,9 +1559,6 @@
                 </div>
                 
                 <div class="card" data-category="tapiocas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Tapioca Queijo do Reino">
                     </div>
@@ -1933,9 +1570,6 @@
                 </div>
                 
                 <div class="card" data-category="tapiocas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Tapioca Charque">
                     </div>
@@ -1947,9 +1581,6 @@
                 </div>
                 
                 <div class="card" data-category="tapiocas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Tapioca Coco com Leite Condensado">
                     </div>
@@ -1961,9 +1592,6 @@
                 </div>
                 
                 <div class="card" data-category="tapiocas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Tapioca Frango com Queijo Mussarela">
                     </div>
@@ -1975,9 +1603,6 @@
                 </div>
                 
                 <div class="card" data-category="tapiocas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Tapioca Queijo Mussarela">
                     </div>
@@ -1989,9 +1614,6 @@
                 </div>
                 
                 <div class="card" data-category="tapiocas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Tapioca Charque com Queijo Mussarela">
                     </div>
@@ -2003,9 +1625,6 @@
                 </div>
                 
                 <div class="card" data-category="tapiocas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Tapioca de Coco com Queijo Coalho">
                     </div>
@@ -2017,9 +1636,6 @@
                 </div>
                 
                 <div class="card" data-category="tapiocas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Tapioca Queijo Coalho">
                     </div>
@@ -2031,9 +1647,6 @@
                 </div>
                 
                 <div class="card" data-category="tapiocas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Tapioca Romeu e Julieta">
                     </div>
@@ -2046,9 +1659,6 @@
 
                 <!-- VITAMINAS -->
                 <div class="card" data-category="vitaminas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Acerola com Leite 340ml">
                     </div>
@@ -2060,9 +1670,6 @@
                 </div>
                 
                 <div class="card" data-category="vitaminas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Goiaba com Leite 340ml">
                     </div>
@@ -2074,9 +1681,6 @@
                 </div>
                 
                 <div class="card" data-category="vitaminas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Cajá com Leite 340ml">
                     </div>
@@ -2088,9 +1692,6 @@
                 </div>
                 
                 <div class="card" data-category="vitaminas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Graviola com Leite 340ml">
                     </div>
@@ -2102,9 +1703,6 @@
                 </div>
                 
                 <div class="card" data-category="vitaminas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Cajú com Leite 340ml">
                     </div>
@@ -2116,9 +1714,6 @@
                 </div>
                 
                 <div class="card" data-category="vitaminas">
-                    <button class="favorite-btn" aria-label="Adicionar aos favoritos">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <div>
                         <img src="assets/product_not_found.jpg" alt="Morango com Leite 340ml">
                     </div>
@@ -2133,7 +1728,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Torres Coffee. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Torres Coffee. Todos os direitos reservados.</p>
     </footer>
     <script src="script.js"></script>
 </body>
